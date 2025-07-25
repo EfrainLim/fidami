@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+{% load static %}
+<body>
+	{% block title %}
+	Blog | Fidami
+	{% endblock title %}
+{% block contenido %}
+	
+{% for empre in empresa %}
+	<!-- Title Bar -->
+	<div class="pbmit-title-bar-wrapper" {% if empre.imagen_cabecera_paginas %}style="background-image: url({{empre.imagen_cabecera_paginas.url}});" {% endif %}>
+		<div class="container">
+			<div class="pbmit-title-bar-content">
+				<div class="pbmit-title-bar-content-inner">
+					<div class="pbmit-tbar">
+						<div class="pbmit-tbar-inner">
+							<h1 class="pbmit-tbar-title"> Blog</h1>
+						</div>
+					</div>
+					<div class="pbmit-breadcrumb">
+						<div class="pbmit-breadcrumb-inner">
+							<span><a title="" href="#" class="home"><span>Fidami</span></a></span>
+							<span class="sep"><i class="pbmit-base-icon-angle-double-right"></i></span>
+							<span><a title="" href="#" class="blog-classic"><span>Blog</span></a></span>
+							<span class="sep"><i class="pbmit-base-icon-angle-double-right"></i></span>
+							<span><a title="" href="#" class="Entrepreneur"><span>Planificación</span></a></span>
+							<span class="sep"><i class="pbmit-base-icon-angle-double-right"></i></span>
+							<span class="post-root post post-post current-item">Inicio de proyecto Rampa</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Title Bar End-->
+	{% endfor %}
+	<!-- Page Content -->
+	<div class="page-content pbmit-bg-color-light">
+
+		<!-- Blog Details -->
+		<section class="">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-9 blog-right-col">
+						<div class="row">
+							<div class="col-md-12">
+								<article class="post blog-details">
+									<div class="post-thumbnail">
+										<div class="pbmit-featured-container">
+											<div class="pbmit-featured-wrapper">
+												<img src="{{blog.imagenes.url}}"
+													class="img-fluid w-100" alt="">
+											</div>
+											<div class="pbmit-meta-date-wrapper">
+												<span class="pbmit-month"> {{blog.fecha_creacion|date:"j \d\e F \d\e Y"}}</span>
+											</div>
+										</div>
+									</div>
+									<div class="post-content">
+										<div class="pbmit-blog-meta pbmit-blog-meta-top">
+											<h3>{{blog.titulo_blog}}</h3>
+											<span class="pbmit-meta pbmit-meta-author">
+												<i class="pbmit-base-icon-user-1"></i>
+												<a class="pbmit-author-link" href="blog-details.html">admin</a>
+											</span>
+											<span class="pbmit-meta pbmit-meta-cat">
+												<i class="pbmit-base-icon-folder-open-empty"></i>
+												<a href="blog-details.html" rel="category tag">{{blog.categoria}}</a>
+											</span>
+											<span class="pbmit-meta pbmit-meta-comments pbmit-comment-bigger-than-zero">
+												<i class="pbmit-base-icon-chat-2"></i> 3 Comentarios
+											</span>
+										</div>
+										<p> 
+										{{blog.contenido|safe}} </p>
+										
+										
+										<div class="pbmit-blog-meta pbmit-blog-meta-bottom ">
+											<div class="pbmit-blog-meta-bottom-left">
+												<span class="pbmit-meta pbmit-meta-tags">
+													<a href="blog-classic.html" rel="tag">Ingenieria</a>
+													<a href="blog-classic.html" rel="tag">Mineria</a>
+													<a href="blog-classic.html" rel="tag">Proyecto</a>
+												</span>
+											</div>
+											<div class="pbmit-blog-meta-bottom-right">
+												<ul>
+													<li class="icons">
+														<a href="#"><i class="pbmit-base-icon-facebook-squared"></i></a>
+													</li>
+													<li class="icons">
+														<a href="#"><i class="pbmit-base-icon-twitter"></i></a>
+													</li>
+													<li class="icons">
+														<a href="#"><i class="pbmit-base-icon-pinterest"></i></a>
+													</li>
+													<li class="icons">
+														<a href="#"><i class="pbmit-base-icon-email"></i></a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</article>
+								<!-- <div class="comments-area">
+										<div class="pbmit-author-box">
+											<div class="pbmit-author-image">
+												<img src="images/avatar/logo.png" alt="">			
+											</div>
+											<div class="pbmit-author-content">
+												<span class="pbmit-author-name">
+													<a href="blog-classic.html" title="Posted by admin" rel="author">admin</a>
+												</span>
+												<p class="pbmit-text pbmit-author-bio">Praesent quis mollis ante, et mollis quam. Praesent viverra erat ac nunc pulvinar, sit amet mattis enim dignissim. Fusce vehicula, mauris eu eleifend rhoncus, ex ipsum consectetur orci, vel elementum erat tortor ut sapien. Mauris luctus fringilla enim.</p>
+											</div>
+										</div>
+										<div class="comments-box">
+											<h2 class="comments-title">3 Replies to “Coal Miner’s Preparation of Surface Mining”</h2>
+											<div class="media">
+												<div class="comment-author">
+													<img class="img-fluid" src="images/avatar/01-img.jpeg" alt="">
+												</div>
+												<div class="media-body comment-meta">
+													<div class="mt-0 comment-owner">John Doe</div>
+													<a class="comment-time-date" href="#">2 years ago</a>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium eius, sunt porro corporis maiores ea, voluptatibus omnis maxime</p>
+													<div class="reply">
+														<a href="#" class="comment-reply-link">Reply</a>
+													</div>
+												</div>
+											</div>
+											<div class="children">
+												<div class="media even depth-2">
+													<div class="comment-author">
+														<img class="img-fluid" src="images/avatar/02-img.jpeg" alt="">
+													</div>
+													<div class="media-body comment-meta">
+														<div class="mt-0 comment-owner">Leona Spencer</div>
+														<a class="comment-time-date" href="#">2 years ago</a>
+														<p>Sed maximus imperdiet ipsum, id scelerisque nisi tincidunt vitae. In lobortis neque nec dolor vehicula, eget vulputate ligula lobortis.</p>
+														<div class="reply">
+															<a href="#" class="comment-reply-link">Reply</a>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="media media-bottom">
+												<div class="comment-author">
+													<img class="img-fluid" src="images/avatar/01-img.jpeg" alt="">
+												</div>
+												<div class="media-body comment-meta">
+													<div class="mt-0 comment-owner">John Doe</div>
+													<a class="comment-time-date" href="#">2 years ago</a>
+													<p>Vivamus gravida felis et nibh tristique viverra. Sed vel tortor id ex accumsan lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+													<div class="reply">
+														<a href="#" class="comment-reply-link">Reply</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="comment-respond">
+										<h2 class="comment-reply-title">Leave a Reply</h2>
+										<div class="comment-form">
+											<p class="comment-notes">Your email address will not be published. Required fields are marked *</p>
+											<form>
+												<div class="row">
+													<div class="col-12">
+														<textarea class="form-control" name="comment" placeholder="Enter your comment here..." cols="100" rows="5"></textarea>
+													</div>
+													<div class="col-sm-4"> 
+														<input id="name" type="text" placeholder="Name" class="form-control" name="name">
+													</div>
+													<div class="col-sm-4"> 
+														<input id="email" class="form-control" placeholder="Email" name="email" type="email" value="">
+													</div>
+													<div class="col-sm-4"> 
+														<input id="url" class="form-control" placeholder="Website" name="url" type="text" value="">
+													</div>                                               
+													<div class="col-12">
+														<div class="form-check mb-3">
+															<input class="form-check-input" type="checkbox">
+															<label class="form-check-label">Save my name, email, and website in this browser for the next time I comment.</label>
+														</div>
+													</div>
+													<div class="col-12"> 
+														<button type="submit" class="pbmit-btn">Post Comment</button>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div> -->
+							</div>	
+								
+							
+						</div>
+					</div>
+					<div class="col-lg-3 blog-left-col">
+						<aside class="sidebar">
+							<aside class="widget widget-search">
+								<form class="search-form">
+									<input type="search" class="search-field" placeholder="Buscar …" value="">
+									<button class="search-btn"><i class="fa fa-search"></i></button>
+								</form>
+							</aside>
+							<aside class="widget widget-recent-post">
+								<h2 class="widget-title">Publicaciones recientes</h2>
+								<ul class="recent-post-list">
+									
+									{% for recientes in ultimos_tres %}
+									<li class="recent-post-list-li">
+										<a class="recent-post-thum" href="{% url 'detalle_blog' recientes.id %}">
+											<img src="{{recientes.imagenes.url}}" class="img-fluid" alt="">
+										</a>
+										<div class="media-body">
+											<a href="{% url 'detalle_blog' recientes.id %}">{{recientes.titulo_blog}}</a>
+											<span class="post-date">{{recientes.fecha_creacion|date:"j \d\e F \d\e Y"}}</span>
+										</div>
+									</li>	
+									{% endfor %}
+								</ul>
+							</aside>
+							<aside class="widget widget-categories">
+								<h2 class="widget-title">Categorias</h2>
+								<ul>
+									<li><a href="blog-classic.html">Desafios</a><span>2</span></li>
+									<li><a href="blog-classic.html">Desarrollo</a><span>3</span></li>
+									<li><a href="blog-classic.html">Mineria</a><span>2</span></li>
+									<li><a href="blog-classic.html">Planificaion</a><span>2</span></li>
+								</ul>
+							</aside>
+							<aside class="widget widget-tag-cloud">
+								<h2 class="widget-title">Nube de etiquetas</h2>
+								<div class="tagcloud">
+									<a href="blog-classic.html" class="tag-cloud-link">Ingeniería</a>
+									<a href="blog-classic.html" class="tag-cloud-link">Maquina</a>
+									<a href="blog-classic.html" class="tag-cloud-link">Mina</a>
+									<a href="blog-classic.html" class="tag-cloud-link">Minería</a>
+									<a href="blog-classic.html" class="tag-cloud-link">Proyecto</a>
+								</div>
+							</aside>
+						</aside>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Blog Details End -->
+
+	</div>
+	<!-- Page Content End -->
+{% endblock contenido %}
+	
+</body

@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<body>
+	{% block title %}
+	Miembros | Fidami
+	{% endblock title %}
+	{% block contenido %}
+	{% for empre in empresa %}
+	<!-- Title Bar -->
+	<div class="pbmit-title-bar-wrapper" {% if empre.imagen_cabecera_paginas %}style="background-image: url({{empre.imagen_cabecera_paginas.url}});" {% endif %}>
+		<div class="container">
+			<div class="pbmit-title-bar-content">
+				<div class="pbmit-title-bar-content-inner">
+					<div class="pbmit-tbar">
+						<div class="pbmit-tbar-inner">
+							<h1 class="pbmit-tbar-title">{{miembro.nombres}}</h1>
+						</div>
+					</div>
+					<div class="pbmit-breadcrumb">
+						<div class="pbmit-breadcrumb-inner">
+							<span><a title="" href="#" class="home"><span>Fidami</span></a></span>
+							<span class="sep"><i class="pbmit-base-icon-angle-double-right"></i></span>
+							<span><a title="" href="#" class="archive">Miembro del Equipo</a></span>
+							<span class="sep"><i class="pbmit-base-icon-angle-double-right"></i></span>
+							<span class="post-root post post-post current-item">{{miembro.nombres}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Title Bar End-->
+	{% endfor %}
+	<!-- Page Content -->
+	<div class="page-content pbmit-bg-color-light">
+
+		<!-- Candidate  Details-->
+		<section class="section-lg">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="pbmit-team-details">
+							<div class="row align-items-center">
+								<div class="col-md-12 col-lg-6">
+									<div class="pbmit-team-details-inner">
+										<div class="pbmit-team-img">
+											<img src="{{miembro.foto.url}}" class="w-100" alt="">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12 col-lg-6">
+									<div class="pbmit-team-summary">
+										<h4 class="pbmit-team-designation">{{miembro.cargo}}</h4>
+										<h2 class="pbmit-team-title">{{miembro.nombres}}</h2>
+										<p>{{miembro.descripcion}}</p>
+										<ul class="pbmit-single-team-info">
+
+											{% if miembro.link_telefono %}
+											<li><label>Telefono</label> {{miembro.link_telefono}} </li>
+											{% endif %}
+											{% if miembro.link_correo %}
+											<li><label>Email</label> <a
+													href="{{miembro.link_correo}}">jefedemina@minerafidami.com.pe</a>
+											</li>
+											{% endif %}
+
+											<li><label>Website</label> <a
+													href="http://www.minerafidami.com.pe">Fidami</a> </li>
+										</ul>
+										<ul class="pbmit-team-social-links">
+
+											{% if miembro.link_facebook %}
+											<li class="pbmit-social-li pbmit-social-facebook">
+												<a href="{{miembro.link_facebook}}" title="Facebook" target="_blank">
+													<span><i class="pbmit-base-icon-facebook-squared"></i></span>
+												</a>
+											</li>
+											{% endif %}
+											{% if miembro.miembro.link_twitter %}
+											<li class="pbmit-social-li pbmit-social-twitter">
+												<a href="{{miembro.miembro.link_twitter}}" title="Twitter"
+													target="_blank">
+													<span><i class="pbmit-base-icon-twitter"></i></span>
+												</a>
+											</li>
+											{% endif %}
+											{% if miembro.link_youtube %}
+											<li class="pbmit-social-li pbmit-social-youtube">
+												<a href="#" title="Youtube" target="_blank">
+													<span><i class="pbmit-base-icon-youtube-play"></i></span>
+												</a>
+											</li>
+											{% endif %}
+											{% if miembro.link_linkedln %}
+											<li class="pbmit-social-li pbmit-social-linkedin">
+												<a href="{{miembro.link_linkedln}}" title="LinkedIn" target="_blank">
+													<span><i class="pbmit-base-icon-linkedin-squared"></i></span>
+												</a>
+											</li>
+											{% endif %}
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="candidate-detail-description">
+							<h3 class="mb-3">¿Qué haré?</h3>
+							<p>{{miembro.trabajo}}</p>
+						</div>
+						<div class="row g-5">
+							<div class="col-xl-12 col-lg-12">
+								<h3 class="pb-2">Mis Logros</h3>
+								<p>{{miembro.contenido|safe}}</p>
+								
+							</div>
+						</div>
+						<!-- <div class="candidate-detail-contact-detail">
+								<h3 class="pb-3">Contactanos</h3>
+								<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit pariatur.</p>
+								<form class="candidate-detail-form">
+									<div class="row g-3">
+										<div class="col-sm-6">
+											<input type="text" class="form-control" placeholder="Your Name *" name="Your Name*">
+										</div>
+										<div class="col-sm-6">
+											<input type="email" class="form-control" placeholder="Your Email *" name="Your Email*">
+										</div>
+										<div class="col-sm-12">
+											<textarea class="form-control" cols="40" rows="5" placeholder="Message" name="Message"></textarea>
+										</div>
+										<div class="input-button">
+											<a href="#" class="pbmit-btn pbmit-btn-blackish">Send Message</a>
+										</div>
+									</div>
+								</form>
+							</div> -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Candidate  Details end -->
+
+	</div>
+	<!-- Page Content End -->
+	{% endblock contenido %}
+</body>

@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+<body>
+	{% block title %}
+	Ventas | Fidami
+	{% endblock title %}
+	{% block contenido %}
+		
+	
+	{% for empre in empresa %}
+		<!-- Title Bar -->
+		<div class="pbmit-title-bar-wrapper" {% if empre.imagen_cabecera_paginas %}style="background-image: url({{empre.imagen_cabecera_paginas.url}});" {% endif %}>
+			<div class="container">
+				<div class="pbmit-title-bar-content">
+					<div class="pbmit-title-bar-content-inner">
+						<div class="pbmit-tbar">
+							<div class="pbmit-tbar-inner">
+								<h1 class="pbmit-tbar-title">Equipos en Venta</h1>
+							</div>
+						</div>
+						<div class="pbmit-breadcrumb">
+							<div class="pbmit-breadcrumb-inner">
+								<span><a title="" href="#" class="home"><span>Fidami</span></a></span>
+								<span class="sep"><i class="pbmit-base-icon-angle-double-right"></i></span>
+								<span><span class="post-root post post-post current-item">Venta</span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Title Bar End-->
+		{% endfor %}
+		<!-- Page Content -->
+		<div class="page-content pbmit-bg-color-light">
+
+            <!-- Service Detail Start --> 
+            <section>
+				<div class="container">
+					<div class="row flex-row-reverse">
+						
+						{% for venta in ventas  %}
+						<div class="col-lg-9 service-right-col">
+							<img src="{{venta.foto.url}}" class="w-100" alt="">
+							<div class="service-details">
+								<h3 class="pbmit-title">{{venta.nombre_venta}}</h3>
+								<p class="mt-3 pb-3">{{venta.descripcion}}</p>
+
+								<a href="https://api.whatsapp.com/send/?phone=914599576&text=Postulacion+para+asistente+Logistica&type=phone_number&app_absent=0" class="pbmit-btn">
+									<span>Contactar</span>
+								</a>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="list-items-left">
+												{{venta.contenido}}
+												
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+						{% endfor %}
+						<div class="col-lg-3 service-left-col">
+							<aside class="service-sidebar">
+								<aside class="widget post-list">
+									<h2> Equipos En Venta</h2>
+									<div class="all-post-list pbmit-bg-color-global">
+										<ul>
+											<li><a href="sales.html"> CAMIONETA AYZ-834 </a></li>
+											<li><a href="sales.html"> CAMION VOLQUETE B6N-819 </a></li>
+											<li><a href="sales.html"> CAMION CISTERNA BOP-760 </a></li>
+											<li><a href="sales.html">  RETROEXCAVADORA 420F-2 </a></li>
+										</ul>
+									</div>
+								</aside>
+							</aside>
+						</div>
+					</div>
+				</div>
+            </section>
+            <!-- Service Detail End -->
+
+		</div>
+		<!-- Page Content End -->
+	{% endblock contenido %}
+</body>

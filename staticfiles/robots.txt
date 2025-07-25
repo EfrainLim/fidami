@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /private/
+Disallow: /temp/
+Allow: /temp/public/
+Allow: /images/logo.png
+
+# Evitar que se rastreen URLs con parámetros de sesión
+Disallow: /*?sessionid=
+
+# Sitemap para ayudar a los motores de búsqueda a indexar el sitio correctamente
+Sitemap: https://minerafidami.com.pe/sitemap.xml

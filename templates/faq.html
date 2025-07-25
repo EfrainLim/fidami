@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+<body>
+
+{% block title %}
+FAQ | Fidami
+{% endblock title %}
+	
+	{% block contenido %}
+	{% for empre in empresa %}
+		<!-- Title Bar -->
+		<div class="pbmit-title-bar-wrapper" {% if empre.imagen_cabecera_paginas %}style="background-image: url({{empre.imagen_cabecera_paginas.url}});" {% endif %}>
+			<div class="container">
+				<div class="pbmit-title-bar-content">
+					<div class="pbmit-title-bar-content-inner">
+						<div class="pbmit-tbar">
+							<div class="pbmit-tbar-inner">
+								<h1 class="pbmit-tbar-title">FAQ</h1>
+							</div>
+						</div>
+						<div class="pbmit-breadcrumb">
+							<div class="pbmit-breadcrumb-inner">
+								<span><a title="" href="#" class="home"><span>Fidami</span></a></span>
+								<span class="sep"><i class="pbmit-base-icon-angle-double-right"></i></span>
+								<span><span class="post-root post post-post current-item">FAQ</span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Title Bar End-->
+{% endfor %}
+		<!-- Page Content -->
+		<div class="page-content pbmit-bg-color-light">
+
+			<!-- FAQ -->
+			<section class="section-lg_tb">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-8">
+							<div class="pbmit-heading-subheading text-center">
+								<h4 class="pbmit-subtitle">Preguntas Generales</h4>
+								<h2 class="pbmit-title">Preguntas Frecuentes</h2>
+								<div class="pbmit-heading-desc mt-4">Encontrará respuestas sobre nuestros ingenieros de
+									Fidami y el servicio de minería de oro y más. No dude en contactarnos si no recibe
+									la respuesta de su pregunta a continuación.</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="accordion accordion-style-1" id="accordionExample2">
+								
+								{% for ultimo in  ultimo_registro %}
+									
+								<div class="accordion-item active">
+									<h2 class="accordion-header" id="headingsix1">
+										<button class="accordion-button" type="button" data-bs-toggle="collapse"
+											data-bs-target="#collapsesix1" aria-expanded="false"
+											aria-controls="collapsesix1">
+											{{ ultimo.titulo_pregunta }}
+										</button>
+									</h2>
+									<div id="collapsesix1" class="accordion-collapse collapse show"
+										aria-labelledby="headingsix1" data-bs-parent="#accordionExample2">
+										<div class="accordion-body">
+											<p> {{ ultimo.descripcion }}</p>
+										</div>
+									</div>
+								</div>
+								{% endfor %}
+								
+								{% for pregunta in  preguntas %}
+									
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="headingeight1">
+										<button class="accordion-button collapsed" type="button"
+											data-bs-toggle="collapse" data-bs-target="#collapseeight{{ forloop.counter }}"
+											aria-expanded="false" aria-controls="collapseeight1">
+											{{ pregunta.titulo_pregunta }}
+										</button>
+									</h2>
+									<div id="collapseeight{{ forloop.counter }}" class="accordion-collapse collapse"
+										aria-labelledby="headingeight1" data-bs-parent="#accordionExample2">
+										<div class="accordion-body">
+											<p>{{ pregunta.descripcion }}</p>
+										</div>
+									</div>
+								</div>
+								
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- FAQ end -->
+
+		</div>
+		<!-- Page Content End -->
+		
+	{% endblock contenido %}
+		
+</body>

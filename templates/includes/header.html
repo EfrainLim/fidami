@@ -1,0 +1,147 @@
+{% load static %}
+{% for empre in empresa %}
+<!-- Header Main Area -->
+<header class="site-header header-style-6">
+    <div class="pre-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="pbmit-pre-header-left">
+                            <ul class="pbmit-contact-info">
+                                <li><i class="pbmit-base-icon-location"></i>{{empre.direccion}}</li>
+                                <li><i class="pbmit-base-icon-mail-alt"></i> {{empre.correo}}</li>
+                                <li><i class="pbmit-base-icon-phone-volume-solid"></i>+51 {{empre.telefono}}</li>
+                            </ul>
+                        </div>
+                        <div class="pbmit-pre-header-right">
+                            <ul class="pbmit-social-links">
+                                {% if empre.link_facebook %}
+                            <li class="pbmit-social-li pbmit-social-facebook">
+                                <a href="{{empre.link_facebook}}" title="Facebook" target="_blank">
+                                    <span><i class="pbmit-base-icon-facebook-squared"></i></span>
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% if empre.telefono %}
+                            <li class="pbmit-social-li pbmit-team-social-links ">
+                                <a href="https://wa.me/{{empre.telefono}}?text=Bienvenido%20a%20Minera%20Fidami" target="_blank">
+                                    <span><i class="pbmit-base-icon-phone-call"></i></span>
+                                </a>
+                            </li>
+                            {% endif %}
+
+                            {% if empre.link_twitter %}
+                            <li class="pbmit-social-li pbmit-social-twitter">
+                                <a href="{{empre.link_twitter}}" title="Twitter" target="_blank">
+                                    <span><i class="pbmit-base-icon-twitter"></i></span>
+                                </a>
+                            </li>	
+                            {% endif %}
+                            {% if empre.link_youtube %}  
+                            <li class="pbmit-social-li pbmit-social-instagram ">
+                                <a href="{{empre.link_youtube}}" target="_blank" rel="noopener">
+                                    <span><i class="pbmit-base-icon-instagram"></i></span>
+                                </a>
+                            </li> 
+                            {% endif %}
+
+                            {% if miembro.link_linkedln %}
+                                <li class="pbmit-social-li pbmit-social-linkedin">
+                                <a href="{{miembro.link_linkedln}}" title="LinkedIn" target="_blank">
+                                    <span><i class="pbmit-base-icon-linkedin-squared"></i></span>
+                                </a>
+                            </li>
+                            {% endif %}
+                            </ul>					
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>	
+    </div>
+    <div class="site-header-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="site-branding">
+                            <a href="{% url 'inicio' %}">
+                                <img class="logo-img" alt="fidami" src="{{empre.logo.url}}">
+                            </a>
+                        </div>
+                        <div class="site-navigation ml-auto">
+                            <nav class="main-menu navbar-expand-xl navbar-light">
+                                <div class="navbar-header">
+                                    <!-- Toggle Button --> 
+                                    <button class="navbar-toggler" type="button">
+                                        <i class="pbmit-base-icon-menu-1"></i>
+                                    </button>
+                                </div>
+                                <div class="pbmit-mobile-menu-bg"></div>
+                                <div class="collapse navbar-collapse clearfix show" id="pbmit-menu">
+                                    <div class="pbmit-menu-wrap">
+                                        <span class="closepanel">
+                                            <i class="pbmit-base-icon-cancel"></i>
+                                        </span>
+                                        <ul class="navigation clearfix">
+                                            <li class="dropdown active">
+                                                <a href="{% url 'inicio' %}">Inico</a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#">Paginas</a>
+                                                <ul>
+                                                    <li><a href="{% url 'nosotros' %}">Sobre Nosotros</a></li>
+                                                    <li><a href="{% url 'historias' %}">Nuestra Historia</a></li>
+                                                    <!-- <li><a href="our-plans.html">Nuestros planes</a> -->
+                                                    <li><a href="{% url 'miembros' %}">Nuestros Miembros de Equipo</a></li>
+                                                    <li><a href="{% url 'empleos' %}">Trabaja con Nosotros</a></li>
+                                                    <li><a href="{% url 'ventas' %}">Ventas</a></li>
+                                                    <!-- <li><a href="team-member-details.html">Detalles de Miembros de Equipo</a></li> -->
+                                                    <li><a href="{% url 'preguntas' %}">Faq</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="{% url 'servicio' %}">Servicios</a>
+                                                <!-- <ul>
+                                                    <li><a href="services-details.html">Detalle de Servicios</a></li>
+                                                </ul> -->
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="{% url 'portafolio' %}">Portafolio</a>
+                                                <ul>
+                                                    <li><a href="{% url 'portafolio' %}">Portafolio</a></li>
+                                                    <!-- <li><a href="project-details.html">Portfolio Details</a></li> -->
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="{% url 'blog' %}">Blog</a>
+                                                <ul>
+                                                    <li><a href="{% url 'blog' %}">Blog</a>
+                                                    </li>
+                                                    <!-- <li><a href="blog-details.html">Blog Single Details</a></li> -->
+                                                </ul>
+                                            </li>
+                                            <li><a href="{% url 'contactos' %}">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="pbmit-right-box">
+                            <div class="pbmit-header-search-btn">
+                                <a href="#"><i class=" pbmit-base-icon-search-1"></i></a>
+                            </div>
+                            <a href="contact-us.html" class="pbmit-btn pbmit-btn-hover-secondary">
+                                <span>Ir</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</header>
+<!-- Header Main Area End Here -->
+{% endfor %}

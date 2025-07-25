@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+<body>
+	{% block title %}
+	Portafolio | Fidami
+	{% endblock title %}
+{% block contenido %}
+{% for empre in empresa %}
+	<!-- Title Bar -->
+	<div class="pbmit-title-bar-wrapper" {% if empre.imagen_cabecera_paginas %}style="background-image: url({{empre.imagen_cabecera_paginas.url}});" {% endif %}>
+		<div class="container">
+			<div class="pbmit-title-bar-content">
+				<div class="pbmit-title-bar-content-inner">
+					<div class="pbmit-tbar">
+						<div class="pbmit-tbar-inner">
+							<h1 class="pbmit-tbar-title"> Portafolio</h1>
+						</div>
+					</div>
+					<div class="pbmit-breadcrumb">
+						<div class="pbmit-breadcrumb-inner">
+							<span><a title="" href="#" class="home"><span>Fidami</span></a></span>
+							<span class="sep"><i class="pbmit-base-icon-angle-double-right"></i></span>
+							<span class="post-root post post-post current-item"> Portafolio</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Title Bar End-->
+	{% endfor %}
+	<!-- Page Content -->
+	<div class="page-content">
+
+		<!-- Portfolio-Style 1 -->
+		<section class="section-md">
+			<div class="container">
+				<div class="row">
+					<!-- portfolio 1 -->
+					{% for portafolio in portafolios %}
+					<div class="col-sm-12 col-md-4">
+						<article class="pbmit-portfolio-style-2">
+							<div class="pbminfotech-post-content">
+								<div class="pbmit-image-wrapper">
+									<div class="pbmit-featured-wrapper">
+										<img src="{{portafolio.imagenes.url}}" class="img-fluid" alt="">
+									</div>
+								</div>
+								<div class="pbminfotech-box-content pbminfotech-overlay">
+									<div class="pbminfotech-box-content-wrapper">
+										<div class="pbminfotech-titlebox">
+											<h3 class="pbmit-portfolio-title">
+												<a href="{% url 'detalle_portafolio' portafolio.id %}">{{portafolio.titulo_portafolio}}</a>
+											</h3>
+											<div class="pbmit-port-cat">
+												<a href="project-style1.html" rel="tag">{{portafolio.categoria}}</a>
+											</div>
+										</div>
+										<div class="pbminfotech-icon-box pbminfotech-media-link">
+											<a class="pbmit-lightbox" title="{{portafolio.titulo_portafolio}}"
+												href="{{portafolio.imagenes.url}}">
+												<i class="pbmit-base-icon-plus-symbol-button"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+		<!-- Project-Style 1 End -->
+
+	</div>
+	<!-- Page Content End -->
+	{% endblock contenido %}
+</body>

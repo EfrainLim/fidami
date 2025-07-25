@@ -1,0 +1,179 @@
+{% load static %}
+
+<!-- Footer -->
+{% for empre in empresa %}
+<footer class="footer site-footer">
+    <div class="pbmit-footer-widget-area-top pbmit-bg-color-global">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <h3 class="pbmit-footer-big-title">Registre su correo para mayor información </h3>
+                </div>
+                <div class="col-md-7">
+                    <form>
+                        <div class="pbmit-footer-newslatter">
+                            <input type="email" name="EMAIL" placeholder="su correo eléctronico" required="">
+                            <button type="submit" value="Sign up">
+                                <span>Enviar</span>
+                                <i class="pbmit-base-icon-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pbmit-footer-widget-area">
+        <div class="container">
+            <div class="row">
+                <div class="footer-widget-col-1">
+                    <div class="pbmit-first-widget pbmit-widget">
+                        <p class="footer-logo">
+                            <img src="{{empre.logo_footer.url}}" class="img-fluid w-auto" alt="">
+                        </p>
+                        <p class="text">{{empre.descripcion}} </p>
+                        <div class="pbmit-free-call-box">
+                            <i class="pbmit-base-icon-phone-call"></i>
+                            <div class="pbmit-call-text">
+                                Contáctenos
+                                <h3>+51 {{empre.telefono}} </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-widget-col-2">
+                    <div class="pbmit-two-widget pbmit-widget">
+                        <h2 class="widget-title">Minera Fidami S.A</h2>
+                        <div class="menu-services-menu-container">
+                            <ul id="menu-services-menu_1" class="menu">
+                                <li id="menu-item-11" class="menu-item">
+                                    <a href="{% url 'inicio' %}">Inicio</a>
+                                </li>
+                                <li id="menu-item-22" class="menu-item">
+                                    <a href="{% url 'nosotros' %}">Sobre Nosotros</a>
+                                </li>
+                                <li id="menu-item-33" class="menu-item">
+                                    <a href="{% url 'blog' %}">Noticias de La Empresa</a>
+                                </li>
+                                <li id="menu-item-44" class="menu-item">
+                                    <a href="{% url 'portafolio' %}">Proyectos</a>
+                                </li>
+                                <li><a href="{% url 'empleos' %}">Trabaja con Nosotros</a></li>
+                                <li><a href="{% url 'ventas' %}l">Ventas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-widget-col-3">
+                    <div class="pbmit-three-widget pbmit-widget">
+                        <h2 class="widget-title">Soluciones & Servicios</h2>
+                        <div class="menu-services-menu-container">
+                            <ul id="menu-services-menu" class="menu">
+                                <li id="menu-item-1" class="menu-item">
+                                    <a href="{% url 'blog' %}"> Sector Minero</a>
+                                </li>
+                                <li id="menu-item-2" class="menu-item">
+                                    <a href="{% url 'portafolio' %}">Precios de proyecto</a>
+                                </li>
+                                <li id="menu-item-3" class="menu-item">
+                                    <a href="{% url 'inicio' %}">Nuestro Filosofia</a>
+                                </li>
+                                <!-- <li id="menu-item-4" class="menu-item">
+                                    <a href="services-details.html">Our Philosophy</a>
+                                </li>
+                                <li id="menu-item-5" class="menu-item">
+                                    <a href="services-details.html">Calculadora de costos</a>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-widget-col-4">
+                    <div class="pbmit-four-widget pbmit-widget">
+                        <h2 class="widget-title">Publicaciones Recientes</h2>
+                        <ul class="pbmit-rpw-list">
+                            {% for ultimos_2_blog in ultimos_2_blogs %}
+                            <li>
+                                <a href="blog-details.html">
+                                    <img src="{{ultimos_2_blog.imagenes.url}}" class="img-fluid" alt="">
+                                </a>
+                                <span class="pbmit-rpw-content">
+                                    <span class="pbmit-rpw-title">
+                                        <a href="{% url 'blog' %}">{{ultimos_2_blog.titulo_blog}}</a>
+                                    </span>
+                                    <span class="pbmit-rpw-date">
+                                        <a href="{% url 'blog' %}">{{ultimos_2_blog.fecha_creacion|date:"j \d\e F \d\e Y"}}</a>
+                                    </span>
+                                </span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pbmit-footer-widget-area-bottom">
+        <div class="container">
+            <div class="pbmit-footer-widget-area-bottom-inner">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>Copyright © <span id="year"></span> Minera Fidami S.A Todos los derechos reservados</p>
+                    </div>
+                    <script>
+                        // Obtener el año actual
+                        const year = new Date().getFullYear();
+                        // Asignar el año al elemento con id "year"
+                        document.getElementById('year').textContent = year;
+                    </script>
+                    <div class="col-md-6">
+                        <ul class="pbmit-social-links text-end">
+                            
+                            {% if empre.link_facebook %}
+                            <li class="pbmit-social-li pbmit-social-facebook">
+                                <a href="{{empre.link_facebook}}" title="Facebook" target="_blank">
+                                    <span><i class="pbmit-base-icon-facebook-squared"></i></span>
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% if empre.telefono %}
+                            <li class="pbmit-social-li pbmit-team-social-links ">
+                                <a href="https://wa.me/{{empre.telefono}}?text=Bienvenido%20a%20Minera%20Fidami" target="_blank">
+                                    <span><i class="pbmit-base-icon-phone-call"></i></span>
+                                </a>
+                            </li>
+                            {% endif %}
+
+                            {% if empre.link_twitter %}
+                            <li class="pbmit-social-li pbmit-social-twitter">
+                                <a href="{{empre.link_twitter}}" title="Twitter" target="_blank">
+                                    <span><i class="pbmit-base-icon-twitter"></i></span>
+                                </a>
+                            </li>	
+                            {% endif %}
+                            {% if empre.link_youtube %}  
+                            <li class="pbmit-social-li pbmit-social-instagram ">
+                                <a href="{{empre.link_youtube}}" target="_blank" rel="noopener">
+                                    <span><i class="pbmit-base-icon-instagram"></i></span>
+                                </a>
+                            </li> 
+                            {% endif %}
+
+                            {% if miembro.link_linkedln %}
+                                <li class="pbmit-social-li pbmit-social-linkedin">
+                                <a href="{{miembro.link_linkedln}}" title="LinkedIn" target="_blank">
+                                    <span><i class="pbmit-base-icon-linkedin-squared"></i></span>
+                                </a>
+                            </li>
+                            {% endif %}
+                             
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer End -->
+{% endfor %}

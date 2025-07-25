@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<body>
+	{% block title %}
+	Blog | Fidami
+	{% endblock title %}
+{% block contenido %}
+{% for empre in empresa %}
+	<!-- Title Bar -->
+	<div class="pbmit-title-bar-wrapper" {% if empre.imagen_cabecera_paginas %}style="background-image: url({{empre.imagen_cabecera_paginas.url}});" {% endif %}>
+		<div class="container">
+			<div class="pbmit-title-bar-content">
+				<div class="pbmit-title-bar-content-inner">
+					<div class="pbmit-tbar">
+						<div class="pbmit-tbar-inner">
+							<h1 class="pbmit-tbar-title">Blog</h1>
+						</div>
+					</div>
+					<div class="pbmit-breadcrumb">
+						<div class="pbmit-breadcrumb-inner">
+							<span><a title="" href="#" class="home"><span>Fidami</span></a></span>
+							<span class="sep"><i class="pbmit-base-icon-angle-double-right"></i></span>
+							<span><span class="post-root post post-post current-item">Blog</span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Title Bar End-->
+	{% endfor %}
+	<!--Page Content -->
+	<div class="page-content pbmit-bg-color-light">
+
+		<!-- Blog Classic -->
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9 col-lg-9 blog-right-col">
+						<div class="row">
+							<!-- Blog 01 -->
+							
+							{% for post in anuncios %}
+							<div class="col-md-12">
+								<article class="post blog-classic">
+									<div class="post-thumbnail">
+										<div class="pbmit-featured-container">
+											<div class="pbmit-featured-wrapper">
+												<img src="{{post.imagenes.url}}"
+													class="img-fluid w-100" alt="">
+											</div>
+											<div class="pbmit-meta-date-wrapper">
+												<span class="pbmit-date"> {{post.fecha_creacion|date:"j \d\e F \d\e Y"}}</span>
+											</div>
+										</div>
+									</div>
+									<div class="post-content">
+										<h3 class="post-box-title">
+											<a href="{% url 'detalle_blog' post.id %}">{{post.titulo_blog}}</a>
+										</h3>
+										<p>{{post.resumen}}</p>
+										<div class="pbmit-blog-meta-wrapper d-flex">
+											<div class="pbmit-blog-meta pbmit-blog-meta-top">
+												<span class="pbmit-meta pbmit-meta-author">
+													<a class="pbmit-author-link" href="#">
+														<i class="pbmit-base-icon-user-1"></i>admin
+													</a>
+												</span>
+												<span class="pbmit-meta pbmit-meta-cat">
+													<i class="pbmit-base-icon-folder-open-empty"></i>
+													<a href="#" rel="category tag">{{post.categoria}}</a>
+												</span>
+												<span
+													class="pbmit-meta pbmit-meta-comments pbmit-comment-bigger-than-zero">
+													<i class="pbmit-base-icon-chat-2"></i>3 Comentarios
+												</span>
+											</div>
+											<div class="pbmit-read-more-link">
+												<a href="blog-details.html"><span>&nbsp;</span></a>
+											</div>
+										</div>
+									</div>
+								</article>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="col-lg-3 blog-left-col">
+						<aside class="sidebar">
+							<aside class="widget widget-search">
+								<form class="search-form">
+									<input type="search" class="search-field" placeholder="Buscar …" value="">
+									<button class="search-btn"><i class="fa fa-search"></i></button>
+								</form>
+							</aside>
+							<aside class="widget widget-recent-post">
+								<h2 class="widget-title">Publicaciones recientes</h2>
+								<ul class="recent-post-list">
+									
+									{% for recientes in ultimos_tres %}
+									<li class="recent-post-list-li">
+										<a class="recent-post-thum" href="blog-details.html">
+											<img src="{{recientes.imagenes.url}}" class="img-fluid" alt="">
+										</a>
+										<div class="media-body">
+											<a href="blog-details.html">{{recientes.titulo_blog}}</a>
+											<span class="post-date">{{recientes.fecha_creacion|date:"j \d\e F \d\e Y"}}</span>
+										</div>
+									</li>	
+									{% endfor %}
+								</ul>
+							</aside>
+							<aside class="widget widget-categories">
+								<h2 class="widget-title">Categorias</h2>
+								<ul>
+									<li><a href="blog-classic.html">Desafios</a><span>2</span></li>
+									<li><a href="blog-classic.html">Desarrollo</a><span>3</span></li>
+									<li><a href="blog-classic.html">Mineria</a><span>2</span></li>
+									<li><a href="blog-classic.html">Planificaion</a><span>2</span></li>
+								</ul>
+							</aside>
+							<aside class="widget widget-tag-cloud">
+								<h2 class="widget-title">Nube de etiquetas</h2>
+								<div class="tagcloud">
+									<a href="blog-classic.html" class="tag-cloud-link">Ingeniería</a>
+									<a href="blog-classic.html" class="tag-cloud-link">Maquina</a>
+									<a href="blog-classic.html" class="tag-cloud-link">Mina</a>
+									<a href="blog-classic.html" class="tag-cloud-link">Minería</a>
+									<a href="blog-classic.html" class="tag-cloud-link">Proyecto</a>
+								</div>
+							</aside>
+						</aside>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Blog Classic End -->
+
+	</div>
+	<!-- Page Content End -->
+	{% endblock contenido %}
+
+</body>

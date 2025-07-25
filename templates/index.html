@@ -1,0 +1,1045 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<body>
+
+	{% block title %}
+	Minera Fidami SA
+	{% endblock title %}
+	<!-- Page Content -->
+
+	{% block contenido %}
+
+	{% comment %} slider {% endcomment %}
+	<div class="pbmit-slider-area">
+		<!-- START Slider Demo 6 REVOLUTION SLIDER 6.5.24 -->
+		<p class="rs-p-wp-fix"></p>
+		<rs-module-wrap id="rev_slider_1_1_wrapper" data-alias="slider-demo-6" data-source="gallery"
+			style="visibility:hidden;background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+			<rs-module id="rev_slider_1_1" data-version="6.5.24">
+				<rs-slides>
+					
+						
+						
+					<rs-slide style="position: absolute;" data-key="rs-1" data-title="Slide"
+						data-thumb="{% static 'revolution/images/slider-06-1-50x100.jpg' %}" data-in="o:0;"
+						data-out="a:false;">
+						{% for slider in sliders %}
+						<img src="{{slider.imagen.url}}" alt="" title="slider-06-1" width="1920"
+							height="760" class="rev-slidebg tp-rs-img" data-no-retina>
+						{% endfor %}
+						<!---->
+						<rs-layer id="slider-1-slide-1-layer-0" data-type="text" data-color="#001736" data-rsp_ch="on"
+							data-xy="xo:620px,430px,320px,200px;y:m;yo:-23px,-6px,-3px,2px;"
+							data-text="w:normal;s:80,80,60,36;l:80,80,60,36;fw:700;" data-dim="w:611px,619px,510px,299px;"
+							data-frame_0="x:175%;o:1;" data-frame_0_mask="u:t;x:-100%;"
+							data-frame_1="e:power3.out;st:1710;sp:1000;sR:1710;" data-frame_1_mask="u:t;"
+							data-frame_999="o:0;st:w;sR:6290;"
+
+							style="z-index:10;font-family:'Titillium Web';text-transform:uppercase;"><span
+								Class="pbmit-globalcolor">{% for slider in sliders  %}
+								{{slider.titulo_slider}}
+							{% endfor %}
+							
+							</span> 
+							
+						</rs-layer><!----><a id="slider-1-slide-1-layer-2" class="rs-layer rev-btn-style-1 rev-btn"
+							href="https://api.whatsapp.com/send/?phone=914599576&text=Bienvenido+a+Minera+Fidami&type=phone_number&app_absent=0" target="_self" data-type="button" data-rsp_ch="on"
+							data-xy="xo:620px,430px,320px,200px;y:m;yo:154px,155px,130px,100px;"
+							data-text="w:normal;s:16;l:60,50,50,50;" data-dim="minh:0px,none,none,none;"
+							data-padding="r:40,33,25,25;l:40,33,25,25;" data-frame_0="x:-100%;" data-frame_0_mask="u:t;"
+							data-frame_1="st:2150;sp:1000;sR:2150;" data-frame_1_mask="u:t;"
+							data-frame_999="o:0;st:w;sR:5850;" data-frame_hover="bgc:#000;bor:0px,0px,0px,0px;"
+							style="z-index:11;background-color:#fe7c00;font-family:'Yantramanav';"><span
+								class="rev-button">Contáctenos</span>
+						</a><!--
+	
+						--><rs-layer id="slider-1-slide-1-layer-3" data-type="text" data-color="#ff8200" data-rsp_ch="on"
+							data-xy="xo:842px,199px,151px,93px;y:m;yo:155px,154px,117px,72px;"
+							data-text="w:normal;s:31,25,18,11;l:31,25,18,11;" data-vbility="t,f,f,f"
+							data-frame_0="sX:0.9;sY:0.9;" data-frame_1="st:2310;sp:1000;sR:2310;"
+							data-frame_999="o:0;st:w;sR:5690;" style="z-index:13;font-family:'Yantramanav';"><i
+								class="pbmit-base-icon-call"></i>
+						</rs-layer><!--
+	
+						--><rs-layer id="slider-1-slide-1-layer-4" data-type="text" data-color="#04080d" data-rsp_ch="on"
+							data-xy="xo:890px,245px,186px,114px;y:m;yo:150px,154px,117px,72px;"
+							data-text="w:normal;s:20,16,12,7;l:25,20,15,9;fw:700;" data-vbility="t,f,f,f"
+							data-frame_0="x:50,41,31,19;" data-frame_1="st:2320;sp:1000;sR:2320;"
+							data-frame_999="o:0;st:w;sR:5680;" style="z-index:12;font-family:'Titillium Web';">+51 914599576
+						</rs-layer><!--
+	
+						--><rs-layer id="slider-1-slide-1-layer-5" data-type="text" data-color="#001736" data-rsp_ch="on"
+							data-xy="xo:620px,430px,320px,200px;y:m;yo:-170px,-148px,-116px,-77px;"
+							data-text="w:normal;s:16,16,16,15;l:20,20,20,17;ls:3px,3px,2px,1px;fw:700;"
+							data-dim="w:357px,619px,457px,354px;" data-frame_0="x:50,41,31,19;"
+							data-frame_1="st:480;sp:1000;sR:480;" data-frame_999="o:0;st:w;sR:7520;"
+							style="z-index:8;font-family:'Yantramanav';text-transform:uppercase;">Bienvenido a Minera Fidami
+						</rs-layer><!--
+	
+						--><rs-layer id="slider-1-slide-1-layer-7" data-type="shape" data-rsp_ch="on"
+							data-xy="xo:620px,430px,320px,200px;yo:224px,192px,171px,136px;"
+							data-text="w:normal;s:20,16,12,7;l:0,20,15,9;" data-dim="w:280px,280px,255px,220px;h:2px;"
+							data-frame_0="x:-100%;" data-frame_0_mask="u:t;" data-frame_1="st:760;sp:1000;sR:760;"
+							data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:7240;"
+							style="z-index:9;background-color:#fe7c00;">
+						</rs-layer><!--
+					--> </rs-slide>
+					
+					<rs-slide style="position: absolute;" data-key="rs-3" data-title="Slide"
+						data-thumb="{% static 'revolution/images/slider-06-2-50x100.jpg' %}" data-in="o:0;"
+						data-out="a:false;">
+						{% for slider in sliders2 %}
+						<img src="{{slider.imagen.url}}" alt="" title="slider-06-2" width="1920"
+							height="760" class="rev-slidebg tp-rs-img" data-no-retina>
+						{% endfor %}
+						<!---->
+						<rs-layer id="slider-1-slide-3-layer-0" data-type="text" data-color="#001736" data-rsp_ch="on"
+							data-xy="xo:620px,430px,320px,200px;y:m;yo:-23px,-6px,-3px,2px;"
+							data-text="w:normal;s:80,80,60,36;l:80,80,60,36;fw:700;" data-dim="w:611px,619px,510px,299px;"
+							data-frame_0="x:175%;o:1;" data-frame_0_mask="u:t;x:-100%;"
+							data-frame_1="e:power3.out;st:1710;sp:1000;sR:1710;" data-frame_1_mask="u:t;"
+							data-frame_999="o:0;st:w;sR:6290;"
+							style="z-index:10;font-family:'Titillium Web';text-transform:uppercase;"><span
+								Class="pbmit-globalcolor">{% for slider in sliders2  %}
+								{{slider.titulo_slider}}
+							{% endfor %}</span>
+						</rs-layer>
+						<!-- --><a id="slider-1-slide-3-layer-2" class="rs-layer rev-btn-style-1 rev-btn"
+							href="https://api.whatsapp.com/send/?phone=914599576&text=Bienvenido+a+Minera+Fidami&type=phone_number&app_absent=0" target="_self" data-type="button"
+							data-rsp_ch="on" data-xy="xo:620px,430px,320px,200px;y:m;yo:154px,155px,130px,100px;"
+							data-text="w:normal;s:16;l:60,50,50,50;" data-dim="minh:0px,none,none,none;"
+							data-padding="r:40,33,25,25;l:40,33,25,25;" data-frame_0="x:-100%;" data-frame_0_mask="u:t;"
+							data-frame_1="st:2150;sp:1000;sR:2150;" data-frame_1_mask="u:t;"
+							data-frame_999="o:0;st:w;sR:5850;" data-frame_hover="bgc:#000;bor:0px,0px,0px,0px;"
+							style="z-index:11;background-color:#fe7c00;font-family:'Yantramanav';"><span
+								class="rev-button">Contáctenos</span>
+						</a><!--
+	
+						--><rs-layer id="slider-1-slide-3-layer-3" data-type="text" data-color="#ff8200" data-rsp_ch="on"
+							data-xy="xo:842px,199px,151px,93px;y:m;yo:155px,154px,117px,72px;"
+							data-text="w:normal;s:31,25,18,11;l:31,25,18,11;" data-vbility="t,f,f,f"
+							data-frame_0="sX:0.9;sY:0.9;" data-frame_1="st:2310;sp:1000;sR:2310;"
+							data-frame_999="o:0;st:w;sR:5690;" style="z-index:13;font-family:'Yantramanav';"><i
+								class="pbmit-base-icon-call"></i>
+						</rs-layer><!--
+	
+						--><rs-layer id="slider-1-slide-3-layer-4" data-type="text" data-color="#04080d" data-rsp_ch="on"
+							data-xy="xo:890px,245px,186px,114px;y:m;yo:150px,154px,117px,72px;"
+							data-text="w:normal;s:20,16,12,7;l:25,20,15,9;fw:700;" data-vbility="t,f,f,f"
+							data-frame_0="x:50,41,31,19;" data-frame_1="st:2320;sp:1000;sR:2320;"
+							data-frame_999="o:0;st:w;sR:5680;" style="z-index:12;font-family:'Titillium Web';">+51 914599576
+						</rs-layer><!--
+	
+						--><rs-layer id="slider-1-slide-3-layer-5" data-type="text" data-color="#001736" data-rsp_ch="on"
+							data-xy="xo:620px,430px,320px,200px;y:m;yo:-170px,-148px,-116px,-77px;"
+							data-text="w:normal;s:16,16,16,15;l:20,20,20,17;ls:3px,3px,2px,1px;fw:700;"
+							data-dim="w:357px,619px,457px,354px;" data-frame_0="x:50,41,31,19;"
+							data-frame_1="st:480;sp:1000;sR:480;" data-frame_999="o:0;st:w;sR:7520;"
+							style="z-index:8;font-family:'Yantramanav';text-transform:uppercase;">Bienvenido a Minera Fidami
+						</rs-layer><!--
+	
+						--><rs-layer id="slider-1-slide-3-layer-7" data-type="shape" data-rsp_ch="on"
+							data-xy="xo:620px,430px,320px,200px;yo:224px,192px,171px,136px;"
+							data-text="w:normal;s:20,16,12,7;l:0,20,15,9;" data-dim="w:280px,280px,255px,220px;h:2px;"
+							data-frame_0="x:-100%;" data-frame_0_mask="u:t;" data-frame_1="st:760;sp:1000;sR:760;"
+							data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:7240;"
+							style="z-index:9;background-color:#fe7c00;">
+						</rs-layer><!---->
+					</rs-slide>
+				</rs-slides>
+			</rs-module>
+		</rs-module-wrap>
+		<!-- END REVOLUTION SLIDER -->
+	</div>
+	{% comment %} slider {% endcomment %}
+
+
+	<div class="page-content pbmit-bg-color-light">
+		<!-- About start -->
+		<section class="section-lg active-onhover">
+			<div class="container">
+				<div class="about-content-one">
+					<div class="row">
+						{% for cabezado in  cabezado_nosotros %}
+						<div class="col-md-6">
+							<div class="pbmit-heading-subheading">
+								<h4 class="pbmit-subtitle">Por qué Eligirnos</h4>
+								<h2 class="pbmit-title">Comenzamos Minera Fidami Para Usted</h2>
+							</div>
+							<div class="about-ihbox">
+								<div class="pbmit-ihbox pbmit-ihbox-style-4">
+									<div class="pbmit-ihbox-box">
+										<div class="pbmit-ihbox-headingicon">
+											<div class="pbmit-ihbox-icon">
+												<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
+													<img src="{{cabezado.imagen_gerente.url}}" class="img-fluid"
+														alt="">
+												</div>
+											</div>
+											<div class="pbmit-ihbox-contents"></div>
+										</div>
+									</div>
+								</div>
+								<div class="about-title">
+									<h2>{{cabezado.gerente}}</h2>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="about-content-right">
+								<p>{{cabezado.descripcion}}</p>
+								<div class="progressbar">
+									<span class="progress-label">Socios </span>
+									<div class="progress progress-lg-bg">
+										<div class="progress-bar aos aos-init aos-animate" data-aos="slide-right"
+											data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+											role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+											style="width:80%"></div>
+										<span class="progress-percent">80%</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="row">
+					<article class="pbmit-miconheading-style-11 col-lg-3 col-md-6">
+						<div class="pbmit-ihbox pbmit-ihbox-style-1">
+							<div class="pbmit-ihbox-box">
+								<div class="pbmit-ihbox-icon">
+									<div class="pbmit-ihbox-icon-wrapper">
+										<i class="pbmit-colza-icon pbmit-colza-icon-miner"></i>
+									</div>
+								</div>
+								<div class="pbmit-ihbox-contents">
+									<h4 class="pbmit-element-subtitle">Explora las carácteristicas</h4>
+									<h2 class="pbmit-element-title">Producción de Oro</h2>
+									<div class="pbmit-heading-desc">proceso de extracción y procesamiento del
+										mineral de oro</div>
+								</div>
+								<div class="pbmit-ihbox-btn">
+									<a href="index.html"><span>Leer Más</span></a>
+								</div>
+							</div>
+						</div>
+					</article>
+					<article class="pbmit-miconheading-style-11 col-lg-3 col-md-6">
+						<div class="pbmit-ihbox pbmit-ihbox-style-1">
+							<div class="pbmit-ihbox-box">
+								<div class="pbmit-ihbox-icon">
+									<div class="pbmit-ihbox-icon-wrapper">
+										<i class="pbmit-colza-icon pbmit-colza-icon-weight-scale"></i>
+									</div>
+								</div>
+								<div class="pbmit-ihbox-contents">
+									<h4 class="pbmit-element-subtitle">Explore las carácteristicas</h4>
+									<h2 class="pbmit-element-title">Exploración</h2>
+									<div class="pbmit-heading-desc">Identificación de yacimientos de oro a través de
+										estudios geológicos.</div>
+								</div>
+								<div class="pbmit-ihbox-btn">
+									<a href="index.html"><span>Leer mas</span></a>
+								</div>
+							</div>
+						</div>
+					</article>
+					<article class="pbmit-miconheading-style-11 col-lg-3 col-md-6">
+						<div class="pbmit-ihbox pbmit-ihbox-style-1">
+							<div class="pbmit-ihbox-box">
+								<div class="pbmit-ihbox-icon">
+									<div class="pbmit-ihbox-icon-wrapper">
+										<i class="pbmit-colza-icon pbmit-colza-icon-gold-ingots"></i>
+									</div>
+								</div>
+								<div class="pbmit-ihbox-contents">
+									<h4 class="pbmit-element-subtitle">Explore Las carácteristicas</h4>
+									<h2 class="pbmit-element-title">Extracción</h2>
+									<div class="pbmit-heading-desc">Minado del mineral, que puede ser realizado
+										mediante técnicas de subterráneas.</div>
+								</div>
+								<div class="pbmit-ihbox-btn">
+									<a href="index.html"><span>Leer mas</span></a>
+								</div>
+							</div>
+						</div>
+					</article>
+					<article class="pbmit-miconheading-style-11 col-lg-3 col-md-6">
+						<div class="pbmit-ihbox pbmit-ihbox-style-1">
+							<div class="pbmit-ihbox-box">
+								<div class="pbmit-ihbox-icon">
+									<div class="pbmit-ihbox-icon-wrapper">
+										<i class="pbmit-colza-icon pbmit-colza-icon-factory"></i>
+									</div>
+								</div>
+								<div class="pbmit-ihbox-contents">
+									<h4 class="pbmit-element-subtitle">Explore las carácteristicas</h4>
+									<h2 class="pbmit-element-title">Procesamiento</h2>
+									<div class="pbmit-heading-desc">Trituración del mineral y separación del oro de
+										otras rocas y minerales mediante métodos como la cianuración o la flotación.
+									</div>
+								</div>
+								<div class="pbmit-ihbox-btn">
+									<a href="index.html"><span>Leer mas</span></a>
+								</div>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+		<!-- About End -->
+		
+		{% for experiencia in  cabezado_nosotros  %}
+		<!-- Expertise Start -->
+		<section class="expertise-bg_color">
+			<div class="container g-0">
+				<div class="row g-0">
+					<div class="col-xl-5 col-lg-12">
+						<div class="expertise-bg-box">
+							<div class="pbmit-heading-subheading text-right">
+								<h4 class="pbmit-subtitle">Experiencia</h4>
+								<h2 class="pbmit-title">{{experiencia.titulo_experiencia}}</h2>
+							</div>
+							<p>{{experiencia.contenido}}</p>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="pbminfotech-ele-fid-style-1">
+										<div class="pbmit-fld-contents">
+											<div class="pbmit-sbox-icon-wrapper" >
+												<i class="fas fa-star"></i>
+											</div>
+											<div class="pbmit-fld-wrap">
+												<h4 class="pbmit-fid-inner">
+													<span class="pbmit-number-rotate numinate"
+														data-appear-animation="animateDigits" data-from="0"
+														data-to="{{experiencia.cantidad_proyectos}}" data-interval="5" data-before=""
+														data-before-style="" data-after=""
+														data-after-style="">{{experiencia.cantidad_proyectos}}</span> <span
+														class="pbmit-fid"><sup>+</sup></span>
+												</h4>
+												<div class="pbmit-fid-title">
+													<span>Proyectos completados</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--  
+									<div class="col-md-6">
+										<div class="pbminfotech-ele-fid-style-1">
+											<div class="pbmit-fld-contents">
+												<div class="pbmit-sbox-icon-wrapper">
+													<i class="fas fa-star"></i>
+												</div>
+												<div class="pbmit-fld-wrap">
+													<h4 class="pbmit-fid-inner">
+														<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="408" data-interval="5" data-before="" data-before-style="" data-after="" data-after-style="">408</span> <span class="pbmit-fid"><sup>+</sup></span>
+													</h4>
+													<div class="pbmit-fid-title">
+														<span>Happy Customers</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									-->
+							</div>
+							<ul class="list-group list-group-borderless">
+								<li class="list-group-item">
+									<i aria-hidden="true" class="far fa-check-square"></i> Sostenibilidad.
+								</li>
+								<li class="list-group-item">
+									<i aria-hidden="true" class="far fa-check-square"></i> Innovaciones
+									Tecnológicas:
+								</li>
+							</ul>
+							<a href="{% url 'nosotros' %}" class="pbmit-btn">
+								<span>Leer mas</span>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-7 col-lg-12">
+						<!-- imagen de experiencia inicio -->
+						<div class="trunck-img-box" {% if experiencia.imagen_experiencia %}style="background-image: url({{experiencia.imagen_experiencia.url}});" {% endif %}></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Expertise End -->
+		{% endfor %}
+
+		<!-- Service Start -->
+		<section class="section-lg">
+			<div class="container">
+				<div class="pbmit-heading-subheading text-center">
+					<h4 class="pbmit-subtitle">Qué Tenemos</h4>
+					<h2 class="pbmit-title">Contamos con maquinaria para la mineria y servicios</h2>
+				</div>
+				<div class="row">
+					
+					{% for servicio in ultimos_tres_servicios %}
+					<div class="col-md-4">
+						<article class="pbmit-service-style-1">
+							<div class="pbminfotech-post-item">
+								<div class="pbmit-service-img-wrapper">
+									<div class="pbmit-featured-wrapper">
+										<img src="{{servicio.imagen.url}}" class="img-fluid"
+											alt="">
+									</div>
+								</div>
+								<div class="pbminfotech-box-content">
+									<div class="pbminfotech-box-content-inner">
+										<div class="pbmit-service-icon-wrapper">
+											<i class="pbmit-colza-icon pbmit-colza-icon-mine-cart"></i>
+										</div>
+										<div class="pbmit-service-cat">
+											<h4><a href="services.html" rel="tag">{{servicio.categoria}}</a></h4>
+										</div>
+										<h3 class="pbmit-service-title">
+											<a href="{% url 'detalle_servicio' servicio.id %}">{{servicio.titulo_servicio}}</a>
+										</h3>
+										<div class="pbmit-service-content">
+											<p>{{servicio.resumen|slice:":110" }}</p>
+										</div>
+										<div class="pbmit-service-btn">
+											<a class="btn-arrow" href="{% url 'detalle_servicio' servicio.id %}">Leer Mas</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					{% endfor %}
+						
+				</div>
+			</div>
+		</section>
+		<!-- Service End -->
+
+		<!-- About us Start -->
+		<section class="about-us-one_bg-section">
+			<div class="container pbmit-col-stretched-yes pbmit-col-right">
+				<div class="row g-0">
+					<div class="col-xl-6 col-lg-12">
+						<div class="about-us-one_left_sigle">
+							<div class="pbmit-heading-subheading">
+								<h4 class="pbmit-subtitle">Lo que tenemos</h4>
+								<h2 class="pbmit-title">Conozca Más Sobre Nosotros</h2>
+							</div>
+							<p>La empresa minería FIDAMI S.A. preocupada por la protección integral, considerando a
+								sus accionistas, colaboradores y medio ambiente</p>
+							<div class="accordion" id="accordionExample1">
+								<div class="accordion-item" id="headingOne1">
+									<h2 class="accordion-header">
+										<button class="accordion-button" type="button" data-bs-toggle="collapse"
+											data-bs-target="#collapseOne1" aria-expanded="false"
+											aria-controls="collapseOne1">
+											¿cuántas horas trabaja un minero?
+										</button>
+									</h2>
+									<div id="collapseOne1" class="accordion-collapse collapse show"
+										aria-labelledby="headingOne1" data-bs-parent="#accordionExample1">
+										<div class="accordion-body">
+											<p>
+												La cantidad de horas que trabaja un minero puede variar
+												significativamente dependiendo de varios factores, incluyendo el
+												país, la industria, el tipo de mina a cielo abierto o subterránea.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="headingTwo1">
+										<button class="accordion-button collapsed" type="button"
+											data-bs-toggle="collapse" data-bs-target="#collapseTwo1"
+											aria-expanded="false" aria-controls="collapseTwo1">
+											¿que PPE se usa comúnmente para la minería ?
+										</button>
+									</h2>
+									<div id="collapseTwo1" class="accordion-collapse collapse"
+										aria-labelledby="headingTwo1" data-bs-parent="#accordionExample1">
+										<div class="accordion-body">
+											<p>
+												Equipos que protegen contra caídas, partículas, ruido, gases y otros
+												riesgos.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="headingThree1">
+										<button class="accordion-button collapsed" type="button"
+											data-bs-toggle="collapse" data-bs-target="#collapseThree1"
+											aria-expanded="false" aria-controls="collapseThree1">
+											¿Cuáles son los riesgos asociados con la minería?
+										</button>
+									</h2>
+									<div id="collapseThree1" class="accordion-collapse collapse"
+										aria-labelledby="headingThree1" data-bs-parent="#accordionExample1">
+										<div class="accordion-body">
+											<p>
+												Los riesgos de la minería incluyen derrumbes, explosiones,
+												inhalación de gases, caídas, lesiones por maquinaria, ruido, fatiga
+												y condiciones extremas.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-6 col-lg-12">
+						<div class="row g-0 pbmit-col-stretched-right">
+							<div class="col-md-6">
+								<div class="about-us-one_bg"></div>
+							</div>
+							<div class="col-md-6 pbmit-bg-color-blackish">
+								<div class="pbminfotech-ele-fid-style-4 ">
+									<div class="pbmit-fld-contents">
+										<div class="pbmit-sbox-icon-wrapper">
+											<i class="fa fa-star"></i>
+										</div>
+										<div class="pbmit-fld-wrap">
+											<h4 class="pbmit-fid-inner">
+												<span class="pbmit-number-rotate" data-appear-animation="animateDigits"
+													data-from="0" data-to="16" data-interval="5" data-before=""
+													data-before-style="" data-after="" data-after-style="">
+													16 </span><span class="pbmit-fid"></span>
+											</h4>
+											<div class="pbmit-fid-title"><span>años de experiencia</span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="swiper-slider about-us-bg_color" data-loop="false" data-autoplay="true"
+									data-dots="true" data-arrows="false" data-columns="1" data-margin="30"
+									data-effect="slide">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<!-- slide 1 -->
+											<article class="pbmit-miconheading-style-10">
+												<div class="pbmit-ihbox pbmit-ihbox-style-10">
+													<div class="pbmit-ihbox-box">
+														<div class="pbmit-ihbox-icon">
+															<div class="pbmit-ihbox-icon-wrapper">
+																<i class="pbmit-colza-icon pbmit-colza-icon-helmet"></i>
+															</div>
+														</div>
+														<div class="pbmit-ihbox-contents">
+															<h2 class="pbmit-element-title">
+																Tenemos Ingenieros expertos y desafiantes
+															</h2>
+														</div>
+													</div>
+												</div>
+											</article>
+										</div>
+										<div class="swiper-slide">
+											<!-- slide 2 -->
+											<article class="pbmit-miconheading-style-10">
+												<div class="pbmit-ihbox pbmit-ihbox-style-10">
+													<div class="pbmit-ihbox-box">
+														<div class="pbmit-ihbox-icon">
+															<!-- imagen seccion lo que tenemos construction'01-->
+															<div class="pbmit-ihbox-icon-wrapper">
+																<i
+																	class="pbmit-colza-icon pbmit-colza-icon-crane-truck"></i>
+															</div>
+														</div>
+														<div class="pbmit-ihbox-contents">
+															<h2 class="pbmit-element-title">
+																Se usan maquinarias para la exploración y
+																explotacion de mineria
+															</h2>
+														</div>
+													</div>
+												</div>
+											</article>
+										</div>
+										<div class="swiper-slide">
+											<!-- slide 3 -->
+											<article class="pbmit-miconheading-style-10">
+												<div class="pbmit-ihbox pbmit-ihbox-style-10">
+													<div class="pbmit-ihbox-box">
+														<div class="pbmit-ihbox-icon">
+															<!-- imagen seccion lo que tenemos construction'02 -->
+															<div class="pbmit-ihbox-icon-wrapper">
+																<i
+																	class="pbmit-colza-icon pbmit-colza-icon-refinery"></i>
+															</div>
+														</div>
+														<div class="pbmit-ihbox-contents">
+															<h2 class="pbmit-element-title">
+																En nuestra empresa trabajan empleados e ingenieros
+																muy trabajadores.
+															</h2>
+														</div>
+													</div>
+												</div>
+											</article>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="about-us-one_bgone"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- About us End -->
+
+		<!-- Icon box Start -->
+		<section class="section-lg">
+			<div class="container">
+				<div class="pbmit-heading-subheading text-center">
+					<h4 class="pbmit-subtitle">Cómo funciona</h4>
+					<h2 class="pbmit-title">Nuestro Proceso de Trabajo</h2>
+					<p class="mt-4">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur
+						adipisci velit sed <br> quia non numquam eius modi tempora incidunt.</p>
+				</div>
+				<div class="row pbmit-element-miconheading-style-5">
+					<article class="pbmit-miconheading-style-5 col-lg-3 col-md-6">
+						<div class="pbmit-ihbox pbmit-ihbox-style-5">
+							<div class="pbmit-ihbox-box">
+								<div class="pbmit-ihbox-icon">
+									<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
+										<img src="{% static 'images/homepage-1/icon/big-inc-01.png' %}"
+											class="img-fluid" alt="">
+									</div>
+								</div>
+								<div class="pbmit-ihbox-contents">
+									<h2 class="pbmit-element-title">Exploración y evaluación</h2>
+									<div class="pbmit-heading-desc">Se realizan estudios geológicos y perforaciones
+										para identificar y evaluar depósitos de oro.</div>
+								</div>
+							</div>
+						</div>
+					</article>
+					<article class="pbmit-miconheading-style-5 col-lg-3 col-md-6">
+						<div class="pbmit-ihbox pbmit-ihbox-style-5">
+							<div class="pbmit-ihbox-box">
+								<div class="pbmit-ihbox-icon">
+									<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
+										<img src="{% static 'images/homepage-1/icon/big-inc-02.png' %}"
+											class="img-fluid" alt="">
+									</div>
+								</div>
+								<div class="pbmit-ihbox-contents">
+									<h2 class="pbmit-element-title">Desarrollo de la mina,Extracción y Transporte
+									</h2>
+									<div class="pbmit-heading-desc">Se construyen túneles y rampas,se excavan
+										galerias y se tranporta lo mismo</div>
+								</div>
+							</div>
+						</div>
+					</article>
+					<article class="pbmit-miconheading-style-5 col-lg-3 col-md-6">
+						<div class="pbmit-ihbox pbmit-ihbox-style-5">
+							<div class="pbmit-ihbox-box">
+								<div class="pbmit-ihbox-icon">
+									<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
+										<img src="{% static 'images/homepage-1/icon/big-inc-03.png' %}"
+											class="img-fluid" alt="">
+									</div>
+								</div>
+								<div class="pbmit-ihbox-contents">
+									<h2 class="pbmit-element-title">Trituración y molienda,Concentración y
+										separación</h2>
+									<div class="pbmit-heading-desc">En la superficie, el mineral se tritura y muele
+										para liberar el oro de la roca y se separa.</div>
+								</div>
+							</div>
+						</div>
+					</article>
+					<article class="pbmit-miconheading-style-5 col-lg-3 col-md-6">
+						<div class="pbmit-ihbox pbmit-ihbox-style-5">
+							<div class="pbmit-ihbox-box">
+								<div class="pbmit-ihbox-icon">
+									<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
+										<img src="{% static 'images/homepage-1/icon/big-inc-04.pn' %}g"
+											class="img-fluid" alt="">
+									</div>
+								</div>
+								<div class="pbmit-ihbox-contents">
+									<h2 class="pbmit-element-title">Refinación, Restauración y cierre</h2>
+									<div class="pbmit-heading-desc">Se rehabilita el área afectada por la minería,
+										incluyendo la gestión de residuos y la restauración del entorno.</div>
+								</div>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+		<!-- Icon box End -->
+
+		<!-- Portfolio Start -->
+		<section class="section-lgt portfolio-bg-one">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-md-6">
+						<div class="pbmit-heading-subheading">
+							<h4 class="pbmit-subtitle text-white">Nuestro trabajo</h4>
+							<h2 class="pbmit-title text-white">Nuestros proyectos recientes</h2>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="text-end">
+							<a href="{% url 'portafolio' %}" class="pbmit-btn pbmit-btn-hover-secondary">
+								<span> Ver todo el portafolio </span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slider button-with-text" data-loop="true" data-autoplay="true" data-dots="true"
+				data-arrows="true" data-columns="5" data-margin="30" data-effect="slide">
+				<div class="swiper-wrapper">
+					
+					{% for portafolio in  portafolios %}
+					<div class="swiper-slide">
+						<!-- slide 1 -->
+						<article class="pbmit-portfolio-style-1">
+							<div class="pbminfotech-post-content">
+								<div class="pbmit-featured-wrapper">
+									<img src="{{ portafolio.imagenes.url }}"
+										class="img-fluid" alt="">
+								</div>
+								<div class="pbminfotech-box-content">
+									<div class="pbminfotech-titlebox">
+										<div class="pbmit-port-cat"> 
+											<a href="{% url 'detalle_portafolio' portafolio.id %}" rel="tag">{{ portafolio.categoria }}</a>
+										</div>
+										<h3 class="pbmit-portfolio-title">
+											<a href="{% url 'detalle_portafolio' portafolio.id %} ">{{ portafolio.titulo_portafolio }}</a>
+										</h3>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					{% endfor %}
+					
+				</div>
+			</div>
+		</section>
+		<!-- Portfolio End -->
+
+
+		<!-- Testimonial Start -->
+
+		<!-- <section class="overflow-hidden">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 col-md-12">
+							<div class="testimonial-bg-one">
+								<div class="pbminfotech-ele-fid-style-5 ">
+									<div class="pbmit-fld-contents d-flex align-items-center">
+										<div class="pbmit-sbox-icon-wrapper">
+											<i class="pbmit-colza-icon pbmit-colza-icon-labor-man"></i>
+										</div>
+										<div class="pbmit-fld-wrap">
+											<h4 class="pbmit-fid-inner">
+												<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="350" data-interval="5" data-before="" data-before-style="" data-after="" data-after-style="">350</span><span class="pbmit-fid"><sup>+</sup></span>
+											</h4>
+											<div class="pbmit-fid-title">
+												<span>Mines Engineers</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-7 col-md-12">
+							<div class="testimonial-box-one">
+								<div class="pbmit-heading-subheading">
+									<h4 class="pbmit-subtitle">Testimonial</h4>
+									<h2 class="pbmit-title">What clients say about</h2>
+								</div>
+								<div class="swiper-slider" data-loop="false" data-autoplay="true" data-dots="true" data-arrows="false" data-columns="1" data-margin="30" data-effect="slide">
+									<div class="swiper-wrapper">
+										--><!-- slide 1 --> <!-- 
+										<div class="swiper-slide">
+											<article class="pbmit-testimonial-style-2">
+												<div class="pbminfotech-post-item">
+													<div class="pbminfotech-box-content">
+														<div class="pbminfotech-box-star-ratings">
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star"></i>
+														</div>
+														<div class="pbminfotech-testimonial-wrapper">
+															<div class="pbminfotech-box-desc">
+																<blockquote class="pbminfotech-testimonial-text">
+																<p>“If you’re looking for a rewarding career and the chance to make an impact, you’ve come to the right place. We will transform your business through our techniques We will transform”</p>
+																</blockquote>
+															</div>
+															<div class="pbminfotech-author-wrapper d-flex">
+																<div class="pbminfotech-box-img">
+																	<div class="pbmit-featured-wrapper"></div>
+																</div>
+																<div class="pbminfotech-box-author">
+																	<h3 class="pbminfotech-box-title">Lusicca Williams</h3>
+																	<div class="pbminfotech-testimonial-detail">CEO &amp; Founder</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</article>
+										</div>
+										--> <!-- slide 2 --><!--
+										<div class="swiper-slide">
+											<article class="pbmit-testimonial-style-2">
+												<div class="pbminfotech-post-item">
+													<div class="pbminfotech-box-content">
+														<div class="pbminfotech-box-star-ratings">
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+														</div>
+														<div class="pbminfotech-testimonial-wrapper">
+															<div class="pbminfotech-box-desc">
+																<blockquote class="pbminfotech-testimonial-text">
+																<p>“If you’re looking for a rewarding career and the chance to make an impact, you’ve come to the right place. We will transform your business through our techniques We will transform”</p>
+																</blockquote>
+															</div>
+															<div class="pbminfotech-author-wrapper d-flex">
+																<div class="pbminfotech-box-img">
+																	<div class="pbmit-featured-wrapper"></div>
+																</div>
+																<div class="pbminfotech-box-author">
+																	<h3 class="pbminfotech-box-title">Richard Anderson</h3>
+																	<div class="pbminfotech-testimonial-detail">Managing Director</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</article>
+										</div>
+										--><!-- slide 3 --><!--
+										<div class="swiper-slide">
+											<article class="pbmit-testimonial-style-2">
+												<div class="pbminfotech-post-item">
+													<div class="pbminfotech-box-content">
+														<div class="pbminfotech-box-star-ratings">
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star"></i>
+														</div>
+														<div class="pbminfotech-testimonial-wrapper">
+															<div class="pbminfotech-box-desc">
+																<blockquote class="pbminfotech-testimonial-text">
+																<p>“If you’re looking for a rewarding career and the chance to make an impact, you’ve come to the right place. We will transform your business through our techniques We will transform”</p>
+																</blockquote>
+															</div>
+															<div class="pbminfotech-author-wrapper d-flex">
+																<div class="pbminfotech-box-img">
+																	<div class="pbmit-featured-wrapper"></div>
+																</div>
+																<div class="pbminfotech-box-author">
+																	<h3 class="pbminfotech-box-title">Eliana Hernandez</h3>
+																	<div class="pbminfotech-testimonial-detail">Berkeley Developer</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</article>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section> -->
+
+		<!-- Testimonial End -->
+
+		<!-- Client Start -->
+		<!-- 
+			<section class="client-section-one">
+				<div class="container">
+					<div class="swiper-slider" data-loop="false" data-autoplay="false" data-dots="false" data-arrows="false" data-columns="6" data-margin="30" data-effect="slide">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								-> <!-- slide 1 --> <!-- 
+								<article class="pbmit-client-style-1">
+									<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+										<h4 class="pbmit-hide">client 1</h4>
+										<div class="pbmit-client-hover-img">
+											<img src="images/homepage-1/client/client-n-01.png" class="img-fluid" alt="">
+										</div>
+										<div class="pbmit-featured-wrapper">
+											<img src="images/homepage-1/client/client-01.png" class="img-fluid" alt="">
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="swiper-slide">
+								<!-- slide 2 --><!-- 
+								<article class="pbmit-client-style-1">
+									<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+										<h4 class="pbmit-hide">client 1</h4>
+										<div class="pbmit-client-hover-img">
+											<img src="images/homepage-1/client/client-n-02.png" class="img-fluid" alt="">
+										</div>
+										<div class="pbmit-featured-wrapper">
+											<img src="images/homepage-1/client/client-02.png" class="img-fluid" alt="">
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="swiper-slide">
+								<!-- slide 3 --><!-- 
+								<article class="pbmit-client-style-1">
+									<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+										<h4 class="pbmit-hide">client 1</h4>
+										<div class="pbmit-client-hover-img">
+											<img src="images/homepage-1/client/client-n-03.png" class="img-fluid" alt="">
+										</div>
+										<div class="pbmit-featured-wrapper">
+											<img src="images/homepage-1/client/client-03.png" class="img-fluid" alt="">
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="swiper-slide">
+								<!-- slide 4 --><!-- 
+								<article class="pbmit-client-style-1">
+									<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+										<h4 class="pbmit-hide">client 1</h4>
+										<div class="pbmit-client-hover-img">
+											<img src="images/homepage-1/client/client-n-04.png" class="img-fluid" alt="">
+										</div>
+										<div class="pbmit-featured-wrapper">
+											<img src="images/homepage-1/client/client-04.png" class="img-fluid" alt="">
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="swiper-slide">
+								<!-- slide 5 --><!-- 
+								<article class="pbmit-client-style-1">
+									<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+										<h4 class="pbmit-hide">client 1</h4>
+										<div class="pbmit-client-hover-img">
+											<img src="images/homepage-1/client/client-n-05.png" class="img-fluid" alt="">
+										</div>
+										<div class="pbmit-featured-wrapper">
+											<img src="images/homepage-1/client/client-05.png" class="img-fluid" alt="">
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="swiper-slide">
+								<!-- slide 6 --><!-- 
+								<article class="pbmit-client-style-1">
+									<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+										<h4 class="pbmit-hide">client 1</h4>
+										<div class="pbmit-client-hover-img">
+											<img src="images/homepage-1/client/client-n-06.png" class="img-fluid" alt="">
+										</div>
+										<div class="pbmit-featured-wrapper">
+											<img src="images/homepage-1/client/client-06.png" class="img-fluid" alt="">
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="swiper-slide">
+								<!-- slide 7 --><!-- 
+								<article class="pbmit-client-style-1">
+									<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+										<h4 class="pbmit-hide">client 1</h4>
+										<div class="pbmit-client-hover-img">
+											<img src="images/homepage-1/client/client-n-01.png" class="img-fluid" alt="">
+										</div>
+										<div class="pbmit-featured-wrapper">
+											<img src="images/homepage-1/client/client-01.png" class="img-fluid" alt="">
+										</div>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section> -->
+
+		<!-- Client End -->
+
+		<!-- Blog Start -->
+		<section class="section-lg">
+			<div class="container">
+				<div class="pbmit-heading-subheading text-center">
+					<h4 class="pbmit-subtitle">últimas noticias</h4>
+					<h2 class="pbmit-title">Nuestro Blog y Noticias</h2>
+					<p>La minería de oro es un sector en constante evolución, con noticias y tendencias que <br>
+						afectan a las empresas y a los inversores.</p>
+				</div>
+				<div class="row">
+					
+					{% for blog in ultimos_tres_blogs %}
+					<div class="col-md-4">
+						<article class="pbmit-blog-style-1">
+							<div class="post-item">
+								<div class="pbmit-featured-container">
+									<div class="pbmit-featured-wrapper">
+										<img src="{{blog.imagenes.url}}"
+											class="img-fluid" alt="">
+									</div>
+									<div class="pbmit-meta-container">
+										<div class="pbmit-meta-date-wrapper">
+											<span><i class="pbmit-base-icon-calendar-1"></i>{{blog.fecha_creacion|date:"j \d\e F \d\e Y"}}</span>
+										</div>
+										<div class="pbmit-meta-cat-wrapper pbmit-meta-line">
+											<div class="pbmit-meta-category">
+												<i class="pbmit-base-icon-folder-open"></i>
+												<a href="blog-classic.html" rel="category tag">{{blog.categoria}}</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="pbminfotech-box-content">
+									<div class="pbminfotech-box-container">
+										<h3 class="pbmit-post-title">
+											<a href="{% url 'detalle_blog' blog.id %}">{{blog.titulo_blog}}</a>
+										</h3>
+										<div class="pbminfotech-box-desc">
+											<div class="pbminfotech-box-desc-text">{{blog.resumen|slice:":110"}}</div>
+										</div>
+										<div class="pbmit-service-btn">
+											<a class="btn-arrow" href="{% url 'detalle_blog' blog.id %}">Leer Más</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+		<!-- Blog End -->
+
+	</div>
+	{% endblock contenido %}
+
+
+	<!-- Page Content End -->
+
+</body>

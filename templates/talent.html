@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+<body>
+	{% block title %}
+	Empleo | Fidami
+	{% endblock title %}
+	{% block contenido %}
+	{% for empre in empresa %}
+		<!-- Title Bar -->
+		<div class="pbmit-title-bar-wrapper" {% if empre.imagen_cabecera_paginas %}style="background-image: url({{empre.imagen_cabecera_paginas.url}});" {% endif %}>
+			<div class="container">
+				<div class="pbmit-title-bar-content">
+					<div class="pbmit-title-bar-content-inner">
+						<div class="pbmit-tbar">
+							<div class="pbmit-tbar-inner">
+								<h1 class="pbmit-tbar-title">Talento Humano</h1>
+							</div>
+						</div>
+						<div class="pbmit-breadcrumb">
+							<div class="pbmit-breadcrumb-inner">
+								<span><a title="" href="#" class="home"><span>Fidami</span></a></span>
+								<span class="sep"><i class="pbmit-base-icon-angle-double-right"></i></span>
+								<span><span class="post-root post post-post current-item">Talento</span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Title Bar End-->
+{% endfor %}
+		<!-- page content -->
+		<div class="page-content">
+
+			<!-- Candidate  Details-->
+			<section class="section-lg">
+				<div class="container">
+					<div class="row">
+						
+						{% for empleo in empleos %}
+						<div class="col-12">
+							<div class="pbmit-team-details">
+								<div class="row align-items-center">
+									<div class="col-md-12 col-lg-6">
+										<div class="pbmit-team-details-inner">
+											<div class="pbmit-team-img">
+												<img src="{{empleo.foto.url}}" class="w-100" alt="">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12 col-lg-6">
+										<div class="pbmit-team-summary">
+											<h2 class="pbmit-team-title">{{empleo.titulo_empleo}}</h2>
+											<p>{{empleo.descripcion}} </h4>
+											<ul class="list-group list-group-borderless mt-0">
+												<li class="list-group-item">
+													<i aria-hidden="true" class="far fa-check-square"></i> {{empleo.cargo}}
+												</li>
+											</ul>
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="candidate-detail-description">
+								<p>{{empleo.contenido|safe}}</p>
+							</div>
+
+							<a href="https://wa.me/{{empleo.telefono}}?text=Postulacion%20para%20asistente%20Logistica" class="pbmit-btn">
+								<span>Postular</span>
+							</a>
+							<!-- <div class="candidate-detail-contact-detail">
+									<h3 class="pb-3">Contactanos</h3>
+									<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit pariatur.</p>
+									<form class="candidate-detail-form">
+										<div class="row g-3">
+											<div class="col-sm-6">
+												<input type="text" class="form-control" placeholder="Your Name *" name="Your Name*">
+											</div>
+											<div class="col-sm-6">
+												<input type="email" class="form-control" placeholder="Your Email *" name="Your Email*">
+											</div>
+											<div class="col-sm-12">
+												<textarea class="form-control" cols="40" rows="5" placeholder="Message" name="Message"></textarea>
+											</div>
+											<div class="input-button">
+												<a href="#" class="pbmit-btn pbmit-btn-blackish">Send Message</a>
+											</div>
+										</div>
+									</form>
+								</div> -->
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</section>
+			<!-- Candidate  Details end -->
+
+		</div>
+		<!-- page content End -->
+	{% endblock contenido %}
+</body>

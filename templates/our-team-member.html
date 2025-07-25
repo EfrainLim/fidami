@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+<body>
+	{% block title %}
+	Miembros | Fidami
+	{% endblock title %}	
+		{% block contenido %}
+		{% for empre in empresa %}
+      	<!-- Title Bar -->
+		  <div class="pbmit-title-bar-wrapper" {% if empre.imagen_cabecera_paginas %}style="background-image: url({{empre.imagen_cabecera_paginas.url}});" {% endif %}>
+			<div class="container">
+				<div class="pbmit-title-bar-content">
+					<div class="pbmit-title-bar-content-inner">
+						<div class="pbmit-tbar">
+							<div class="pbmit-tbar-inner">
+								<h1 class="pbmit-tbar-title">  Nuestro Equipo</h1>
+							</div>
+						</div>
+						<div class="pbmit-breadcrumb">
+							<div class="pbmit-breadcrumb-inner">
+								<span><a title="" href="#" class="home"><span>Fidami</span></a></span>
+								<span class="sep"><i class="pbmit-base-icon-angle-double-right"></i></span>
+								<span class="post-root post post-post current-item"> Miembros de nuestro Equipo</span>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</div> 	
+		</div>
+      	<!-- Title Bar End-->
+		{% endfor %}
+        <!-- Page Content -->
+        <div class="page-content">
+
+            <!-- Our Team Member Start --> 
+            <section class="section-lg pbmit-bg-color-light team-member-section">
+				<div class="container">
+					<div class="pbmit-heading-subheading text-center">
+						<h4 class="pbmit-subtitle">Nuestro Equipo</h4>
+						<h2 class="pbmit-title">Miembros del equipo</h2>
+					</div>
+					<div class="row">
+						
+						{% for miembro in miembros %}
+						<div class="col-md-6 col-lg-3">
+							<article class="pbmit-team-style-1">
+								<div class="pbminfotech-post-item">
+									<div class="pbminfotech-team-image-box">
+										<div class="pbminfotech-social-box">
+											<div class="pbminfotech-team-share">
+												<i class="pbmit-base-icon-plus"></i>
+											</div>
+											<div class="pbminfotech-box-social-links">
+												<ul class="pbmit-social-links pbmit-team-social-links">
+													
+													{% if miembro.link_facebook %}
+													<li class="pbmit-social-li pbmit-social-facebook">
+														<a href="{{miembro.link_facebook}}" title="Facebook" target="_blank">
+															<span><i class="pbmit-base-icon-facebook-squared"></i></span>
+														</a>
+													</li>
+													{% endif %}
+													
+													{% if miembro.miembro.link_twitter %}
+													<li class="pbmit-social-li pbmit-social-twitter">
+														<a href="{{miembro.link_twitter}}" title="Twitter" target="_blank">
+															<span><i class="pbmit-base-icon-twitter"></i></span>
+														</a>
+													</li>	
+													{% endif %}
+														
+													
+													{% if miembro.link_youtube %}
+													<li class="pbmit-social-li pbmit-social-youtube">
+														<a href="{{miembro.link_youtube}}" title="Youtube" target="_blank">
+															<span><i class="pbmit-base-icon-youtube-play"></i></span>
+														</a>
+													</li>
+													{% endif %}
+														
+													
+													{% if miembro.link_linkedln %}
+														<li class="pbmit-social-li pbmit-social-linkedin">
+														<a href="{{miembro.link_linkedln}}" title="LinkedIn" target="_blank">
+															<span><i class="pbmit-base-icon-linkedin-squared"></i></span>
+														</a>
+													</li>
+													{% endif %}
+														
+												</ul>
+											</div>
+										</div>
+										<div class="pbmit-featured-wrapper">
+											<img src="{{miembro.foto.url}}" class="img-fluid w-100" alt="">
+										</div>
+									   </div>
+									<div class="pbminfotech-box-content">
+										<div class="pbminfotech-box-content-inner">
+											<div class="pbminfotech-team-position">
+												<div class="pbminfotech-box-team-position">{{miembro.cargo}}</div>
+											</div>
+											<h3 class="pbmit-team-title">
+												<a href="{% url 'detalle_miembros' miembro.id %}">{{miembro.nombres}}</a>
+											</h3>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+            </section>
+
+            <!-- Our Team Member End -->
+            
+		</div>
+		<!-- Page Content End -->
+
+		{% endblock contenido %}
+</body>

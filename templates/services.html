@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load static %}
+
+<body>
+	{% block title %}
+	Servicios | Fidami
+	{% endblock title %}
+	{% block contenido %}
+	{% for empre in empresa %}
+	<!-- Title Bar -->
+	<div class="pbmit-title-bar-wrapper" {% if empre.imagen_cabecera_paginas %}style="background-image: url({{empre.imagen_cabecera_paginas.url}});" {% endif %}>
+		<div class="container">
+			<div class="pbmit-title-bar-content">
+				<div class="pbmit-title-bar-content-inner">
+					<div class="pbmit-tbar">
+						<div class="pbmit-tbar-inner">
+							<h1 class="pbmit-tbar-title"> Servicios</h1>
+						</div>
+					</div>
+					<div class="pbmit-breadcrumb">
+						<div class="pbmit-breadcrumb-inner">
+							<span><a title="" href="#" class="home"><span>Fidami</span></a></span>
+							<span class="sep"><i class="pbmit-base-icon-angle-double-right"></i></span>
+							<span><a title="" href="#" class="archive"> Servicios</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Title Bar End-->
+{% endfor %}
+	<!-- Page Content -->
+	<div class="page-content pbmit-bg-color-light">
+
+		<!-- Service -->
+		<section class="section-md">
+			<div class="container">
+				<div class="row">
+					<!-- service-1-->
+					{% comment %} <div class="col-md-4">
+						<article class="pbmit-service-style-1">
+							<div class="pbminfotech-post-item">
+								<div class="pbmit-service-img-wrapper">
+									<div class="pbmit-featured-wrapper">
+										<img src="images/homepage-1/service/torre.jpg" class="img-fluid" alt="">
+									</div>
+								</div>
+								<div class="pbminfotech-box-content">
+									<div class="pbminfotech-box-content-inner">
+										<div class="pbmit-service-icon-wrapper">
+											<i class="pbmit-colza-icon pbmit-colza-icon-mine-cart"></i>
+										</div>
+										<div class="pbmit-service-cat">
+											<h4><a href="services.html" rel="tag">Planificacion</a></h4>
+										</div>
+										<h3 class="pbmit-service-title">
+											<a href="services-details.html">Energia Renovable</a>
+										</h3>
+										<div class="pbmit-service-content">
+											<p>Utiliza paneles solares para convertir la luz del sol directamente en
+												electricidad mediante células solares.</p>
+										</div>
+										<div class="pbmit-service-btn">
+											<a class="btn-arrow" href="services-details.html">Leer Mas</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div> {% endcomment %}
+					<!-- service-1-->
+					
+					{% for servicio in servicios %}
+					<div class="col-md-4">
+						<article class="pbmit-service-style-1">
+							<div class="pbminfotech-post-item">
+								<div class="pbmit-service-img-wrapper">
+									<div class="pbmit-featured-wrapper">
+										<img src="{{servicio.imagen.url}}" class="img-fluid" alt="">
+									</div>
+								</div>
+								<div class="pbminfotech-box-content">
+									<div class="pbminfotech-box-content-inner">
+										<div class="pbmit-service-icon-wrapper">
+											<i class="pbmit-colza-icon pbmit-colza-icon-crane-truck"></i>
+										</div>
+										<div class="pbmit-service-cat">
+											<h4><a href="services.html" rel="tag">{{servicio.categoria}}</a></h4>
+										</div>
+										<h3 class="pbmit-service-title">
+											<a href="{% url 'detalle_servicio' servicio.id %}">{{servicio.titulo_servicio}}</a>
+										</h3>
+										<div class="pbmit-service-content">
+											<p>{{servicio.resumen|slice:":110"}}</p>
+										</div>
+										<div class="pbmit-service-btn">
+											<a class="btn-arrow" href="{% url 'detalle_servicio' servicio.id %}">Leer mas</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+		<!-- service end-->
+
+	</div>
+	<!-- Page Content End -->
+	{% endblock contenido %}
+
+</body>

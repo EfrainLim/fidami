@@ -1,0 +1,523 @@
+
+ {% extends 'base.html' %}  
+ {% load static %}
+   <body>
+	{% block title %}
+	Nosotros | Fidami
+	{% endblock title %}
+
+	{% block contenido %}
+		
+        <!-- Title Bar -->
+		{% for empre in empresa %}
+        <div class="pbmit-title-bar-wrapper" {% if empre.imagen_cabecera_paginas %}style="background-image: url({{empre.imagen_cabecera_paginas.url}});" {% endif %}>
+            <div class="container">
+				<div class="pbmit-title-bar-content">
+					<div class="pbmit-title-bar-content-inner">
+						<div class="pbmit-tbar">
+							<div class="pbmit-tbar-inner">
+								<h1 class="pbmit-tbar-title">Sobre Nosotros</h1>
+							</div>
+						</div>
+						<div class="pbmit-breadcrumb">
+							<div class="pbmit-breadcrumb-inner">
+								<span><a title="" href="#" class="home"><span>Fidami</span></a></span>
+								<span class="sep"><i class="pbmit-base-icon-angle-double-right"></i></span>
+								<span class="post-root post post-post current-item">sobre Nosotros</span>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+		{% endfor %}
+        <!-- Title Bar End-->
+
+		<!-- Page Content -->
+		<div class="page-content pbmit-bg-color-light">
+			
+			{% for nosot in  nosotros%}
+				
+			<!-- About start --> 
+			<section class="about-us_section">
+				<div class="container">
+					<div class="about-content-one">
+						<div class="row"> 
+							<div class="col-md-6">
+								<div class="pbmit-heading-subheading">
+									<h4 class="pbmit-subtitle">Por qué Eligirnos</h4>
+									<h2 class="pbmit-title">{{nosot.titulo_nosotros}}</h2>
+								</div>
+								<div class="about-ihbox">
+									<div class="pbmit-ihbox pbmit-ihbox-style-4">
+										<div class="pbmit-ihbox-box">
+											<div class="pbmit-ihbox-headingicon">
+												<div class="pbmit-ihbox-icon">
+													<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
+														<img src="{{nosot.imagen_gerente.url}}" class="img-fluid" alt="">
+													</div>
+												</div>
+												<div class="pbmit-ihbox-contents"></div>
+											</div>
+										</div>
+									</div>
+									<div class="about-title">
+										<h2>{{nosot.gerente}}</h2>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="about-content-right">
+									<p>{{nosot.descripcion}}</p>
+										<div class="progressbar">
+											<span class="progress-label">Socios especificos</span>
+											<div class="progress progress-lg-bg">
+												<div class="progress-bar aos aos-init aos-animate" data-aos="slide-right"
+													data-aos-delay="200" data-aos-duration="1000"
+													data-aos-easing="ease-in-out" role="progressbar" aria-valuenow="80"
+													aria-valuemin="0" aria-valuemax="100" style="width:80%"></div>
+												<span class="progress-percent">80%</span>
+											</div>
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="about-us_section_bg">
+						<img src="{{nosot.imagen.url}}" class="img-fluid" alt="">
+						<div class="about-us-video-button-box">
+							<div class="icon-wrapper">
+								<a href="{{nosot.link_video}}" class="pbmit-lightbox-video">
+									<i class="fa fa-play"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- About End --> 
+
+			<!-- Expertise Start --> 
+			<section class="overflow-hidden bg-white">
+				<div class="container g-0">
+					<div class="row">
+						<div class="col-xl-6 col-lg-12">
+							<div class="about-us_inner_bg "{% if nosot.imagen_experiencia %}style="background-image: url({{nosot.imagen_experiencia.url}});" {% endif %}></div>
+						</div>
+						<div class="col-xl-6 col-lg-12">
+							<div class="about-us_inner_single">
+								<div class="pbmit-heading-subheading text-right">
+									<h4 class="pbmit-subtitle">Experiencia</h4>
+									<h2 class="pbmit-title">{{nosot.titulo_experiencia}}</h2>
+								</div>
+								<p>{{nosot.contenido}}</p>
+								<div class="row mb-4">
+									<div class="col-md-6">
+										<div class="pbminfotech-ele-fid-style-1">
+											<div class="pbmit-fld-contents">
+												<div class="pbmit-sbox-icon-wrapper">
+													<i class="fas fa-star"></i>
+												</div>
+												<div class="pbmit-fld-wrap">
+													<h4 class="pbmit-fid-inner">
+														<span class="pbmit-number-rotate numinate"
+															data-appear-animation="animateDigits" data-from="0"
+															data-to="{{nosot.cantidad_proyectos}}" data-interval="5" data-before=""
+															data-before-style="" data-after=""
+															data-after-style="">{{nosot.cantidad_proyectos}}</span> <span
+															class="pbmit-fid"><sup>+</sup></span>
+													</h4>
+													<div class="pbmit-fid-title">
+														<span>Proyectos completados</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--  
+									<div class="col-md-6">
+										<div class="pbminfotech-ele-fid-style-1">
+											<div class="pbmit-fld-contents">
+												<div class="pbmit-sbox-icon-wrapper">
+													<i class="fas fa-star"></i>
+												</div>
+												<div class="pbmit-fld-wrap">
+													<h4 class="pbmit-fid-inner">
+														<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="408" data-interval="5" data-before="" data-before-style="" data-after="" data-after-style="">408</span> <span class="pbmit-fid"><sup>+</sup></span>
+													</h4>
+													<div class="pbmit-fid-title">
+														<span>Happy Customers</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									-->
+								</div>
+								<ul class="list-group list-group-borderless">
+									<li class="list-group-item">
+										<i aria-hidden="true" class="far fa-check-square"></i> Sostenibilidad.
+									</li>
+									<li class="list-group-item">
+										<i aria-hidden="true" class="far fa-check-square"></i> Innovaciones
+										Tecnológicas:
+									</li>
+								</ul>
+								<a href="{% url 'nosotros' %}" class="pbmit-btn">
+									<span>Leer mas</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Expertise End --> 
+			{% endfor %}
+			<!-- Team Style Start -->
+			<section class="section-lg">
+				<div class="container">
+					<div class="pbmit-heading-subheading text-center">
+						<h4 class="pbmit-subtitle">Nuestro Equipo</h4>
+						<h2 class="pbmit-title">Miembros del equipo</h2>
+					</div>
+					<div class="row">
+						{% for miembro in membros_alea %}
+						<div class="col-md-6 col-lg-3">
+							<article class="pbmit-team-style-1">
+								<div class="pbminfotech-post-item">
+									<div class="pbminfotech-team-image-box">
+										<div class="pbminfotech-social-box">
+											<div class="pbminfotech-team-share">
+												<i class="pbmit-base-icon-plus"></i>
+											</div>
+											<div class="pbminfotech-box-social-links">
+												<ul class="pbmit-social-links pbmit-team-social-links">
+													
+													{% if miembro.link_facebook %}
+													<li class="pbmit-social-li pbmit-social-facebook">
+														<a href="{{miembro.link_facebook}}" title="Facebook" target="_blank">
+															<span><i class="pbmit-base-icon-facebook-squared"></i></span>
+														</a>
+													</li>
+													{% endif %}
+													
+													{% if miembro.miembro.link_twitter %}
+													<li class="pbmit-social-li pbmit-social-twitter">
+														<a href="{{miembro.link_twitter}}" title="Twitter" target="_blank">
+															<span><i class="pbmit-base-icon-twitter"></i></span>
+														</a>
+													</li>	
+													{% endif %}
+														
+													
+													{% if miembro.link_youtube %}
+													<li class="pbmit-social-li pbmit-social-youtube">
+														<a href="{{miembro.link_youtube}}" title="Youtube" target="_blank">
+															<span><i class="pbmit-base-icon-youtube-play"></i></span>
+														</a>
+													</li>
+													{% endif %}
+														
+													
+													{% if miembro.link_linkedln %}
+														<li class="pbmit-social-li pbmit-social-linkedin">
+														<a href="{{ miembro.link_linkedln}}" title="LinkedIn " target="_blank">
+															<span><i class="pbmit-base-icon-linkedin-squared"></i></span>
+														</a>
+													</li>
+													{% endif %}
+
+												</ul>
+											</div>
+										</div>
+										<div class="pbmit-featured-wrapper">
+											<img src="{{ miembro.foto.url }}" class="img-fluid w-100" alt="">
+										</div>
+									   </div>
+									<div class="pbminfotech-box-content">
+										<div class="pbminfotech-box-content-inner">
+											<div class="pbminfotech-team-position">
+												<div class="pbminfotech-box-team-position">{{ miembro.cargo }}</div>
+											</div>
+											<h3 class="pbmit-team-title">
+												<a href="{% url 'detalle_miembros' miembro.id %}">{{ miembro.nombres }}</a>
+											</h3>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</section>
+			<!-- Team Style End -->
+
+			<!-- Client Start -->
+
+			<!-- <section class="pbmit-bg-color-blackish">
+				<div class="container-fluid g-0">
+					<div class="row g-0">
+						<div class="col-md-2">
+							<article class="pbmit-client-style-2">
+								<div class="pbmit-client-wrapper">
+									<h4 class="pbmit-hide">client 12</h4>
+									<div class="pbmit-featured-wrapper">
+										<img src="images/homepage-2/client/client-06-white.png" class="img-fluid" alt="">
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="col-md-2">
+							<article class="pbmit-client-style-2">
+								<div class="pbmit-client-wrapper">
+									<h4 class="pbmit-hide">client 12</h4>
+									<div class="pbmit-featured-wrapper">
+										<img src="images/homepage-2/client/client-05-white.png" class="img-fluid" alt="">
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="col-md-2">
+							<article class="pbmit-client-style-2">
+								<div class="pbmit-client-wrapper">
+									<h4 class="pbmit-hide">client 12</h4>
+									<div class="pbmit-featured-wrapper">
+										<img src="images/homepage-2/client/client-04-white.png" class="img-fluid" alt="">
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="col-md-2">
+							<article class="pbmit-client-style-2">
+								<div class="pbmit-client-wrapper">
+									<h4 class="pbmit-hide">client 12</h4>
+									<div class="pbmit-featured-wrapper">
+										<img src="images/homepage-2/client/client-03-white.png" class="img-fluid" alt="">
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="col-md-2">
+							<article class="pbmit-client-style-2">
+								<div class="pbmit-client-wrapper">
+									<h4 class="pbmit-hide">client 12</h4>
+									<div class="pbmit-featured-wrapper">
+										<img src="images/homepage-2/client/client-02-white.png" class="img-fluid" alt="">
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="col-md-2">
+							<article class="pbmit-client-style-2">
+								<div class="pbmit-client-wrapper">
+									<h4 class="pbmit-hide">client 12</h4>
+									<div class="pbmit-featured-wrapper">
+										<img src="images/homepage-2/client/client-01-white.png" class="img-fluid" alt="">
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+			</section> -->
+
+			<!-- Client End -->
+
+            <!-- Testimonial Start -->
+
+			<!-- 
+			<section class="overflow-hidden">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 col-md-12">
+							<div class="testimonial-bg-one">
+								<div class="pbminfotech-ele-fid-style-5 ">
+									<div class="pbmit-fld-contents d-flex align-items-center">
+										<div class="pbmit-sbox-icon-wrapper">
+											<i class="pbmit-colza-icon pbmit-colza-icon-labor-man"></i>
+										</div>
+										<div class="pbmit-fld-wrap">
+											<h4 class="pbmit-fid-inner">
+												<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="350" data-interval="5" data-before="" data-before-style="" data-after="" data-after-style="">350</span><span class="pbmit-fid"><sup>+</sup></span>
+											</h4>
+											<div class="pbmit-fid-title">
+												<span>Mines Engineers</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-7 col-md-12">
+							<div class="testimonial-box-one">
+								<div class="pbmit-heading-subheading">
+									<h4 class="pbmit-subtitle">Testimonial</h4>
+									<h2 class="pbmit-title">What clients say about</h2>
+								</div>
+								<div class="swiper-slider" data-loop="false" data-autoplay="true" data-dots="true" data-arrows="false" data-columns="1" data-margin="30" data-effect="slide">
+									<div class="swiper-wrapper">
+										--><!-- slide 1 --><!--
+										<div class="swiper-slide">
+											<article class="pbmit-testimonial-style-2">
+												<div class="pbminfotech-post-item">
+													<div class="pbminfotech-box-content">
+														<div class="pbminfotech-box-star-ratings">
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star"></i>
+														</div>
+														<div class="pbminfotech-testimonial-wrapper">
+															<div class="pbminfotech-box-desc">
+																<blockquote class="pbminfotech-testimonial-text">
+																<p>“If you’re looking for a rewarding career and the chance to make an impact, you’ve come to the right place. We will transform your business through our techniques We will transform”</p>
+																</blockquote>
+															</div>
+															<div class="pbminfotech-author-wrapper d-flex">
+																<div class="pbminfotech-box-img">
+																	<div class="pbmit-featured-wrapper"></div>
+																</div>
+																<div class="pbminfotech-box-author">
+																	<h3 class="pbminfotech-box-title">Lusicca Williams</h3>
+																	<div class="pbminfotech-testimonial-detail">CEO &amp; Founder</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</article>
+										</div>
+										--><!-- slide 2 --><!--
+										<div class="swiper-slide">
+											<article class="pbmit-testimonial-style-2">
+												<div class="pbminfotech-post-item">
+													<div class="pbminfotech-box-content">
+														<div class="pbminfotech-box-star-ratings">
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star"></i>
+														</div>
+														<div class="pbminfotech-testimonial-wrapper">
+															<div class="pbminfotech-box-desc">
+																<blockquote class="pbminfotech-testimonial-text">
+																<p>“If you’re looking for a rewarding career and the chance to make an impact, you’ve come to the right place. We will transform your business through our techniques We will transform”</p>
+																</blockquote>
+															</div>
+															<div class="pbminfotech-author-wrapper d-flex">
+																<div class="pbminfotech-box-img">
+																	<div class="pbmit-featured-wrapper"></div>
+																</div>
+																<div class="pbminfotech-box-author">
+																	<h3 class="pbminfotech-box-title">Richard Anderson</h3>
+																	<div class="pbminfotech-testimonial-detail">Managing Director</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</article>
+										</div>
+										--><!-- slide 3 --><!--
+										<div class="swiper-slide">
+											<article class="pbmit-testimonial-style-2">
+												<div class="pbminfotech-post-item">
+													<div class="pbminfotech-box-content">
+														<div class="pbminfotech-box-star-ratings">
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star pbmit-active"></i>
+															<i class="pbmit-base-icon-star"></i>
+														</div>
+														<div class="pbminfotech-testimonial-wrapper">
+															<div class="pbminfotech-box-desc">
+																<blockquote class="pbminfotech-testimonial-text">
+																<p>“If you’re looking for a rewarding career and the chance to make an impact, you’ve come to the right place. We will transform your business through our techniques We will transform”</p>
+																</blockquote>
+															</div>
+															<div class="pbminfotech-author-wrapper d-flex">
+																<div class="pbminfotech-box-img">
+																	<div class="pbmit-featured-wrapper"></div>
+																</div>
+																<div class="pbminfotech-box-author">
+																	<h3 class="pbminfotech-box-title">Eliana Hernandez</h3>
+																	<div class="pbminfotech-testimonial-detail">Berkeley Developer</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</article>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			 -->
+			<!-- Testimonial End -->
+            
+            <!-- Blog Start -->
+			<section class="section-lg">
+				<div class="container">
+					<div class="pbmit-heading-subheading text-center">
+						<h4 class="pbmit-subtitle">últimas noticias</h4>
+						<h2 class="pbmit-title">Nuestro Blog y Noticias</h2>
+						<p>La minería de oro es un sector en constante evolución, con noticias y tendencias que <br>
+							afectan a las empresas y a los inversores.</p>
+					</div>
+					<div class="row">
+						{% for blog in ultimos_tres %}
+						<div class="col-md-4">
+							<article class="pbmit-blog-style-1">
+								<div class="post-item">
+									<div class="pbmit-featured-container">
+										<div class="pbmit-featured-wrapper">
+											<img src="{{ blog.imagenes.url }}" class="img-fluid" alt="">
+										</div>
+										<div class="pbmit-meta-container">
+											<div class="pbmit-meta-date-wrapper">
+												<span><i class="pbmit-base-icon-calendar-1"></i>{{blog.fecha_creacion|date:"j \d\e F \d\e Y"}}</span>
+											</div>
+											<div class="pbmit-meta-cat-wrapper pbmit-meta-line">
+												<div class="pbmit-meta-category">
+													<i class="pbmit-base-icon-folder-open"></i>
+													<a href="blog-classic.html" rel="category tag">{{blog.categoria}}</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="pbminfotech-box-content">
+										<div class="pbminfotech-box-container">
+											<h3 class="pbmit-post-title">
+												<a href="blog-details.html">{{blog.titulo_blog}} </a>
+											</h3>
+											<div class="pbminfotech-box-desc">
+												<div class="pbminfotech-box-desc-text">{{blog.resumen|slice:":110"}}</div>
+											</div>
+											<div class="pbmit-service-btn">
+												<a class="btn-arrow" href="{% url 'detalle_blog' blog.id %}">Leer Más</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</section>
+			<!-- Blog End -->
+
+		</div>
+		<!-- Page Content End -->
+
+	{% endblock contenido %}
+		
+   </body>
