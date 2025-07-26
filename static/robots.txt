@@ -10,4 +10,4 @@ Allow: /images/logo.png
 Disallow: /*?sessionid=
 
 # Sitemap para ayudar a los motores de búsqueda a indexar el sitio correctamente
-Sitemap: https://minerafidami.com.pe/sitemap.xml
+Sitemap: https://minerafidami.com/sitemap.xml
