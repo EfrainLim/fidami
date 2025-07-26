@@ -23,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-mrde81g0*w-arl+z+y$=&i%3e_x01f6q@ob1n&g0s3p&k6zb(8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['http://minerafidami.com', 'minerafidami.com','localhost','127.0.0.1','64.23.222.197']
+ALLOWED_HOSTS = ['minerafidami.com', 'www.minerafidami.com', 'localhost', '127.0.0.1', '64.23.222.197']
 
 
 # Application definition
@@ -136,11 +136,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 

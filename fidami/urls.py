@@ -27,4 +27,9 @@ urlpatterns = [
     #accounts
     path('accounts/',include('accounts.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+# Configuración para servir archivos estáticos y media en desarrollo
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
